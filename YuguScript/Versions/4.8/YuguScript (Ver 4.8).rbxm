@@ -1,0 +1,4006 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Model" referent="RBX0">
+		<Properties>
+			<CoordinateFrame name="ModelInPrimary">
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+				<R00>1</R00>
+				<R01>0</R01>
+				<R02>0</R02>
+				<R10>0</R10>
+				<R11>1</R11>
+				<R12>0</R12>
+				<R20>0</R20>
+				<R21>0</R21>
+				<R22>1</R22>
+			</CoordinateFrame>
+			<string name="Name">YuguScript</string>
+			<Ref name="PrimaryPart">null</Ref>
+		</Properties>
+		<Item class="Model" referent="RBX1">
+			<Properties>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<string name="Name">MainScript</string>
+				<Ref name="PrimaryPart">null</Ref>
+			</Properties>
+			<Item class="Script" referent="RBX2">
+				<Properties>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">YuguScript</string>
+					<ProtectedString name="Source">
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+--   __    __                         ____                                   __                                           --
+--  /\ \  /\ \                       /\  _`\                    __          /\ \__                                        --
+--  \ `\`\\/&apos;/__  __     __    __  __\ \,\ \_\     ___   _ __  /\_\   _____ \ \ ,_\                                       --
+--   `\ `\ /&apos;/\ \/\ \  /&apos;_ `\ /\ \/\ \\/_\__ \    /&apos;___\/\`&apos;__\\/\ \ /\ &apos;__`\\ \ \/                                       --
+--     `\ \ \\ \ \_\ \/\ \_\ \\ \ \_\ \ /\ \ \ \ /\ \__/\ \ \/  \ \ \\ \ \_\ \\ \ \_                                      --
+--       \ \_\\ \____/\ \____ \\ \____/ \ `\____\\ \____\\ \_\   \ \_\\ \ ,__/ \ \__\                                     --
+--        \/_/ \/___/  \/____\ \\/___/   \/_____/ \/____/ \/_/    \/_/ \ \ \/   \/__/                                     --
+--                       /\____/                                        \ \_\                                             --
+--                       \_/__/                                          \/_/                                             --
+--&#9; ____&#9;&#9;&#9;&#9;  __    __                     ______                                                 __
+--  /\  _`\              /\ \  /\ \                __ /\__  _\                                               /\ \         --
+--  \ \ \L\ \   __  __   \ `\`\\/&apos;/  ___      __  /\_\\/_/\ \/    ___     ___ ___       __       ____    ___ \ \ \___     --
+--   \ \  _ &lt;&apos; /\ \/\ \   `\ `\ /&apos;  / __`\  /&apos;_ `\\/\ \  \ \ \   / __`\ /&apos; __` __`\   /&apos;__`\    /&apos;,__\  /&apos;___\\ \  _ `\   --
+--    \ \ \L\ \\ \ \_\ \    `\ \ \ /\ \_\ \/\ \_\ \\ \ \  \ \ \ /\ \_\ \/\ \/\ \/\ \ /\ \_\.\_ /\__, `\/\ \__/ \ \ \ \ \  --
+--     \ \____/ \/`____ \     \ \_\\ \____/\ \____ \\ \_\  \ \_\\ \____/\ \_\ \_\ \_\\ \__/.\_\\/\____/\ \____\ \ \_\ \_\ --
+--      \/___/   `/___/&gt; \     \/_/ \/___/  \/___L\ \\/_/   \/_/ \/___/  \/_/\/_/\/_/ \/__/\/_/ \/___/  \/____/  \/_/\/_/ --
+--                  /\___/                    /\____/                                                                     --
+--                  \/__/                     \_/__/                                                                      --
+----------------------------------------------------------------------------------------------------------------------------
+
+
+ 
+-- You May Change The Below Variables! --
+
+teamsymbol =   &#9;    (&quot;//&quot;)     --{Text Chr Required For Team Chat!  exmp(*This is a team message!)}
+teamtext =          (false)   --{Is Chat Names In TeamColor or Default?}
+WaitMessage =&#9;&#9;(&quot;YuguScript Is Loading!&quot;) --This will appear in the chat multiple times untill the script fully loads.
+chatSlimit =        (0)-- 0 to disable,  Time in seconds  that is required between each message, if a plr chats faster than this the msg will not show.
+
+
+
+
+--===================================================================================================     
+--[[&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9; __  __         _         
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;|  \/  |       (_)       
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;| .  . |  __ _  _  _ __  
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;| |\/| | / _` || || &apos;_ \ 
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;| |  | || (_| || || | | |
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;\_|  |_/ \__,_||_||_| |_|
+                         
+ --]] -- Yogi Tomasch : YuguScript                        
+--=======================================================================================================
+listOp = {&apos; &apos;}
+local Rver = (&quot;Alpha&quot;)
+local XSver = (&quot;4.8&quot;)
+local adminicon = &quot;http://www.roblox.com/asset/?id=0&quot; --127188050
+local defaulticon = &quot;http://www.roblox.com/asset/?id=0&quot; --127188015
+_G[&quot;svricon&quot;] = &quot;http://www.roblox.com/asset/?id=0&quot; --127188076
+local OwnerRandom = false 
+local wtrs = true
+local admintitle = &quot;Yugu&quot;
+local admintitle2 = &quot;Admin&quot;           
+_G[&quot;showicons&quot;] = false                            
+_G[&quot;waittime&quot;] = &#9;1
+_G[&quot;GlobalBlock&quot;] = false
+_G[&quot;GlobalCBlock&quot;] = false
+_G[&quot;msgs&quot;] = {(WaitMessage)}
+_G[&quot;WTMRK&quot;] = (script.Name)
+_G[&quot;CRCTXT&quot;] = &quot; By %s&quot;
+
+--Chat Name Colors!
+ownerOcolor = Color3.new(10/255,120/255,190/255) -- [CEO] color
+local ownercolor = Color3.new(255/255,255/255,255/255) -- [CEO].text.Color
+local admincolor = Color3.new(4/255,90/255,140/255)     --[ADMIN] Color Set Set Here
+local defaultcolor = Color3.new(214/255,214/255,214/255)  --[Default] Set here
+local regcolor = Color3.new(255/255,255/255,255/255) --
+
+--[Note] colors!
+_G[&quot;SCREAMcolor&quot;] = Color3.new(255/255,0/255,0/255) --[Scream] Color
+_G[&quot;svrcolor&quot;] = Color3.new(10/255,120/255,190/255)
+
+--[Global Info Function]--
+
+function postInfoGlobal(msg)
+&#9;local IV = script.Parent.Parent.PostInfo
+&#9;IV.Value = true
+&#9;IV.Info.Value = msg
+&#9;wait (4)
+&#9;if IV.Value == true then
+&#9;&#9;IV.Value = false
+&#9;end
+end
+
+
+--====Lowercase Converter====--
+
+--      [Removed in 4.0]
+
+--local svradmin = string.lower(svradmin)
+--local adminA = string.lower(adminA)
+--local svradmin = string.lower(svradmin)
+
+--====ALIAS DETECTION &amp; SETUP====--
+
+AliasRoot = script.Parent.Parent.Variables.Alias
+local svradminAlias = AliasRoot.ImmaBeastX
+
+
+--=====Rank Detector====--
+--
+--    [Removed in 4.1]
+--
+
+print(&quot;YuguScript: v&quot;..XSver..&apos; Is Installed!&apos;)
+postInfoGlobal(&apos;Yuguscript v.&apos;..XSver..&apos;Is Currently Installed!&apos;)
+function defMessage()
+&#9;print(&apos;YuguScript: &apos;..&apos;Global Message Changed!&apos;)
+&#9;listX = (table.concat(listOp, &apos;, &apos;))
+&#9;_G.waittime = 25
+&#9;if listX == &apos; &apos; then
+&#9;&#9;_G.msgs = {&quot;YuguScript Ver: &quot;..XSver..&quot;!&quot;,&quot;Need Help? Leave A Comment!&quot;,&quot;Place Revision # &quot;..(game.PlaceVersion)..&quot;!&quot;}
+&#9;else
+&#9;&#9;_G.msgs = {(&quot;Online Admins [&quot;..(listX)..&quot;]&quot;),&quot;YuguScript Ver: &quot;..XSver..&quot;!&quot;,&quot;Need Help? Leave A Comment!&quot;,&quot;Place Revision # &quot;..(game.PlaceVersion)..&quot;!&quot;}
+&#9;end
+end
+
+-----------------------------------------------------------------------------------------------------------------
+--[[
+              _____  _             _     __  __                                        
+             /  __ \| |           | |   |  \/  |                                        
+             | /  \/| |__    __ _ | |_  | .  . |  __ _  _ __    __ _   __ _   ___  _ __ 
+             | |    | &apos;_ \  / _` || __| | |\/| | / _` || &apos;_ \  / _` | / _` | / _ \| &apos;__|
+             | \__/\| | | || (_| || |_  | |  | || (_| || | | || (_| || (_| ||  __/| |   
+              \____/|_| |_| \__,_| \__| \_|  |_/ \__,_||_| |_| \__,_| \__, | \___||_|   
+                                                                       __/ |            
+                                                                      |___/             
+--]] -- Yogi Tomasch : YuguScript
+------------------------------------------------------------------------------------------------------------------
+function addEvent(plr, msg, name)
+&#9;if plr ~= nil and msg ~= nil and name ~= nil then
+&#9;&#9;EventTag = Instance.new(&quot;StringValue&quot;,script.Parent.Log)
+&#9;&#9;EventTag.Name = (&quot;[&quot;..name..&quot;] &quot;..msg)
+&#9;&#9;if plr.Name then
+&#9;&#9;&#9;EventTag.Value = plr.Name
+&#9;&#9;else
+&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;[Error] [Log]: (plr.Name Missing)&quot;)
+&#9;&#9;&#9;if plr ~= nil then
+&#9;&#9;&#9;&#9;EventTag.Value = plr
+&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;[AutoFix] [Log]: (plr.Name) replaced with [&quot;..plr..&apos;]&apos;)
+&#9;&#9;&#9;end
+&#9;&#9;end
+&#9;else
+&#9;&#9;print(&quot;YuguScript: &quot;..&quot;[Error] [Log]: Missing (plr) or (msg) or (name)&quot;)
+&#9;end
+end
+
+function getAprint(plr)
+&#9;local player = script.Parent.Oplayers.OA:findFirstChild(string.lower(plr))
+&#9;if player then
+&#9;&#9;table.insert(listOp, 1, plr)
+&#9;end
+end
+
+function playerchatted(player, msg)
+&#9;CheckCmd = msg:find(&quot;!&quot;)
+&#9;addEvent(player, msg, &apos;Chatted&apos;)
+&#9;if OwnerRandom == true then
+&#9;&#9;ownerOcolor = Color3.new((math.random(255)/255),(math.random(255)/255),(math.random(255)/255)) --[Owner] Random Color Set(*)
+&#9;&#9;ownercolor = Color3.new((math.random(255)/255),(math.random(255)/255),(math.random(255)/255))
+&#9;else
+&#9;&#9;ownercolor = Color3.new(255/255,255/255,255/255)
+&#9;&#9;ownerOcolor = Color3.new(10/255,120/255,190/255)
+&#9;end
+&#9;isOwner_ = player:findFirstChild(&apos;IsOwner&apos;)
+&#9;isAdmin_ = player:findFirstChild(&apos;IsAdmin&apos;)
+&#9;if string.sub(msg,1,1) == teamsymbol then
+
+&#9;&#9;for _,v in ipairs(game.Players:GetPlayers()) do
+&#9;&#9;&#9;if v.TeamColor == player.TeamColor then
+&#9;&#9;--
+&#9;&#9;&#9;&#9;local string12 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+&#9;&#9;&#9;&#9;if string12 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string12:remove()
+&#9;&#9;&#9;&#9;end
+--
+&#9;&#9;&#9;&#9;local string11 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+&#9;&#9;&#9;&#9;if string11 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string11.Position = string11.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string11.Name = &quot;string12&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string10 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+&#9;&#9;&#9;&#9;if string10 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string10.Position = string10.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string10.Name = &quot;string11&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string9 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+&#9;&#9;&#9;&#9;if string9 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string9.Position = string9.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string9.Name = &quot;string10&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string8 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+&#9;&#9;&#9;&#9;if string8 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string8.Position = string8.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string8.Name = &quot;string9&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string7 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+&#9;&#9;&#9;&#9;if string7 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string7.Position = string7.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string7.Name = &quot;string8&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string6 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+&#9;&#9;&#9;&#9;if string6 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string6.Position = string6.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string6.Name = &quot;string7&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string5 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+&#9;&#9;&#9;&#9;if string5 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string5.Position = string5.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string5.Name = &quot;string6&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string4 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+&#9;&#9;&#9;&#9;if string4 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string4.Position = string4.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string4.Name = &quot;string5&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string3 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+&#9;&#9;&#9;&#9;if string3 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string3.Position = string3.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string3.Name = &quot;string4&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string2 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+&#9;&#9;&#9;&#9;if string2 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string2.Position = string2.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string2.Name = &quot;string3&quot;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;local string1 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+&#9;&#9;&#9;&#9;if string1 ~= nil then
+&#9;&#9;&#9;&#9;&#9;string1.Position = string1.Position - UDim2.new(0,0,0,20)
+&#9;&#9;&#9;&#9;&#9;string1.Name = &quot;string2&quot;
+&#9;&#9;&#9;&#9;end
+--
+&#9;&#9;&#9;&#9;local newstring = v.PlayerGui.Chat.Frame.templatestring:clone()
+&#9;&#9;&#9;&#9;newstring.Name = &quot;string1&quot;
+&#9;&#9;&#9;&#9;newstring.Parent = v.PlayerGui.Chat.Frame
+&#9;&#9;&#9;&#9;newstring.Position = UDim2.new(0,20,0,550)
+&#9;&#9;&#9;&#9;newstring.Visible = true
+&#9;&#9;&#9;&#9;if isOwner_ then
+&#9;&#9;&#9;&#9;&#9;newstring.overlay.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot;
+&#9;&#9;&#9;&#9;&#9;newstring.text.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;newstring.shadow.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;elseif isAdmin_ then
+&#9;&#9;&#9;&#9;&#9;newstring.overlay.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot;
+&#9;&#9;&#9;&#9;&#9;newstring.text.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;newstring.shadow.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;if teamtext == true then
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = admincolor
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = ownerOcolor
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;if teamtext == true then
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = admincolor
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;if _G.showicons == true then
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.text.icon.Visible = true
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot; -- 127188050
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;if script.Parent.Parent.BadWord.Value == true then
+&#9;&#9;&#9;&#9;&#9;if script.Parent.Parent.BadWord.Sender.Value ==  player.Name then
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.text.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.shadow.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;&#9;
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.overlay.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot;
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.text.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;&#9;newstring.shadow.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;end&#9;&#9;
+&#9;&#9;&#9;&#9;elseif script.Parent.Parent.BadWord.Value == false then
+&#9;&#9;&#9;&#9;&#9;newstring.overlay.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot;
+&#9;&#9;&#9;&#9;&#9;newstring.text.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;newstring.shadow.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)&#9;&#9;
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;if _G.showicons == true then
+&#9;&#9;&#9;&#9;&#9;newstring.text.icon.Visible = true
+&#9;&#9;&#9;&#9;&#9;newstring.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot; -- 127188015
+&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;newstring.text.icon.Visible = false
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;if teamtext == true then
+&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;newstring.overlay.TextColor3 = defaultcolor
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end
+&#9;&#9;end
+&#9;end
+&#9;local string12sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+&#9;if string12sg ~= nil then
+&#9;&#9;string12sg:remove()
+&#9;end
+--
+&#9;local string11sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+&#9;if string11sg ~= nil then
+&#9;&#9;string11sg.Position = string11sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string11sg.Name = &quot;string12&quot;
+&#9;end
+&#9;local string10sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+&#9;if string10sg ~= nil then
+&#9;&#9;string10sg.Position = string10sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string10sg.Name = &quot;string11&quot;
+&#9;end
+&#9;local string9sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+&#9;if string9sg ~= nil then
+&#9;&#9;string9sg.Position = string9sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string9sg.Name = &quot;string10&quot;
+&#9;end
+&#9;local string8sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+&#9;if string8sg ~= nil then
+&#9;&#9;string8sg.Position = string8sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string8sg.Name = &quot;string9&quot;
+&#9;end
+&#9;local string7sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+&#9;if string7sg ~= nil then
+&#9;&#9;string7sg.Position = string7sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string7sg.Name = &quot;string8&quot;
+&#9;end
+&#9;local string6sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+&#9;if string6sg ~= nil then
+&#9;&#9;string6sg.Position = string6sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string6sg.Name = &quot;string7&quot;
+&#9;end
+&#9;local string5sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+&#9;if string5sg ~= nil then
+&#9;&#9;string5sg.Position = string5sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string5sg.Name = &quot;string6&quot;
+&#9;end
+&#9;local string4sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+&#9;if string4sg ~= nil then
+&#9;&#9;string4sg.Position = string4sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string4sg.Name = &quot;string5&quot;
+&#9;end
+&#9;local string3sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+&#9;if string3sg ~= nil then
+&#9;&#9;string3sg.Position = string3sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string3sg.Name = &quot;string4&quot;
+&#9;end
+&#9;local string2sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+&#9;if string2sg ~= nil then
+&#9;&#9;string2sg.Position = string2sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string2sg.Name = &quot;string3&quot;
+&#9;end
+&#9;local string1sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+&#9;if string1sg ~= nil then
+&#9;&#9;string1sg.Position = string1sg.Position - UDim2.new(0,0,0,20)
+&#9;&#9;string1sg.Name = &quot;string2&quot;
+&#9;end
+&#9;local newstringsg = game.StarterGui.Chat.Frame.templatestring:clone()
+&#9;newstringsg.Name = &quot;string1&quot;
+&#9;newstringsg.Parent = game.StarterGui.Chat.Frame
+&#9;newstringsg.Position = UDim2.new(0,20,0,550)
+&#9;newstringsg.Visible = true
+&#9;if isOwner_ then
+newstringsg.overlay.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot;
+newstringsg.text.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+newstringsg.shadow.Text = &quot;[Team] [&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;if teamtext == true then
+&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;else
+&#9;newstring.overlay.TextColor3 = ownercolor
+&#9;newstring.overlay.TextColor3 = ownerOcolor
+&#9;end
+elseif isAdmin_ then
+newstringsg.overlay.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot;
+newstringsg.text.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+newstringsg.shadow.Text = &quot;[Team] [&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+if teamtext == true then
+newstring.overlay.TextColor3 = player.TeamColor.Color
+else
+newstring.overlay.TextColor3 = admincolor
+end
+if teamtext == true then
+newstringsg.overlay.TextColor3 = player.TeamColor.Color
+else
+newstringsg.overlay.TextColor3 = admincolor
+end
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot;
+else
+newstringsg.text.icon.Visible = false
+end
+else
+if script.Parent.Parent.BadWord.Value == true then
+&#9;if script.Parent.Parent.BadWord.Sender.Value ==  player.Name then
+&#9;&#9;newstringsg.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;newstringsg.text.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;
+&#9;&#9;newstringsg.shadow.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;&#9;
+&#9;else
+&#9;&#9;newstringsg.overlay.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot;
+&#9;&#9;newstringsg.text.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;&#9;newstringsg.shadow.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;end
+elseif script.Parent.Parent.BadWord.Value == false then
+&#9;newstringsg.overlay.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot;
+&#9;newstringsg.text.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)
+&#9;newstringsg.shadow.Text = &quot;[Team] &quot; ..player.Name.. &quot;: &quot; ..string.sub(msg,2)&#9;&#9;
+end
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot;
+else
+newstringsg.text.icon.Visible = false
+end
+if teamtext == true then
+newstringsg.overlay.TextColor3 = player.TeamColor.Color
+else
+newstringsg.overlay.TextColor3 = defaultcolor
+end
+end
+
+else --
+&#9;
+for _,v in ipairs(game.Players:GetPlayers()) do
+--
+local string12 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12 ~= nil then
+string12:remove()
+end
+--
+local string11 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11 ~= nil then
+string11.Position = string11.Position - UDim2.new(0,0,0,20)
+string11.Name = &quot;string12&quot;
+end
+local string10 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10 ~= nil then
+string10.Position = string10.Position - UDim2.new(0,0,0,20)
+string10.Name = &quot;string11&quot;
+end
+local string9 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9 ~= nil then
+string9.Position = string9.Position - UDim2.new(0,0,0,20)
+string9.Name = &quot;string10&quot;
+end
+local string8 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8 ~= nil then
+string8.Position = string8.Position - UDim2.new(0,0,0,20)
+string8.Name = &quot;string9&quot;
+end
+local string7 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7 ~= nil then
+string7.Position = string7.Position - UDim2.new(0,0,0,20)
+string7.Name = &quot;string8&quot;
+end
+local string6 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6 ~= nil then
+string6.Position = string6.Position - UDim2.new(0,0,0,20)
+string6.Name = &quot;string7&quot;
+end
+local string5 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5 ~= nil then
+string5.Position = string5.Position - UDim2.new(0,0,0,20)
+string5.Name = &quot;string6&quot;
+end
+local string4 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4 ~= nil then
+string4.Position = string4.Position - UDim2.new(0,0,0,20)
+string4.Name = &quot;string5&quot;
+end
+local string3 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3 ~= nil then
+string3.Position = string3.Position - UDim2.new(0,0,0,20)
+string3.Name = &quot;string4&quot;
+end
+local string2 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2 ~= nil then
+string2.Position = string2.Position - UDim2.new(0,0,0,20)
+string2.Name = &quot;string3&quot;
+end
+local string1 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1 ~= nil then
+string1.Position = string1.Position - UDim2.new(0,0,0,20)
+string1.Name = &quot;string2&quot;
+end
+--
+local newstring = v.PlayerGui.Chat.Frame.templatestring:clone()
+newstring.Name = &quot;string1&quot;
+newstring.Parent = v.PlayerGui.Chat.Frame
+newstring.Position = UDim2.new(0,20,0,550)
+newstring.Visible = true
+if isOwner_ then
+&#9;local delimiter_point=msg:find(&quot; &quot;, 1, true)
+&#9;if svradminAlias.Value == &apos;~null&apos; then
+&#9;&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;else
+&#9;&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;end
+&#9;&#9;newstring.text.TextColor3 = ownercolor
+&#9;&#9;newstring.overlay.TextColor3 = ownerOcolor
+&#9;else
+&#9;&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;&#9;newstring.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;&#9;newstring.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = svradminAlias.Value.. &quot;: [Command Executed]&quot;
+&#9;&#9;&#9;newstring.shadow.Text = svradminAlias.Value.. &quot;: [Command Executed]&quot;
+&#9;&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;&#9;newstring.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = svradminAlias.Value.. &quot;: [Kick Executed]&quot;
+&#9;&#9;&#9;newstring.shadow.Text = svradminAlias.Value.. &quot;: [Kick Executed]&quot;
+&#9;&#9;else
+&#9;&#9;&#9;newstring.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstring.text.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;end
+&#9;&#9;if teamtext == true then
+&#9;&#9;&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;&#9;else
+&#9;&#9;&#9;newstring.overlay.TextColor3 = defaultcolor
+&#9;&#9;end
+&#9;end&#9;
+elseif isAdmin_ then
+&#9;local delimiter_point=msg:find(&quot; &quot;, 1, true)
+&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;else
+&#9;&#9;newstring.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstring.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstring.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;end
+&#9;if teamtext == true then
+&#9;newstring.overlay.TextColor3 = player.TeamColor.Color
+&#9;else
+&#9;newstring.overlay.TextColor3 = admincolor
+&#9;end
+if teamtext == true then
+newstring.overlay.TextColor3 = player.TeamColor.Color
+else
+newstring.overlay.TextColor3 = admincolor
+end
+if _G.showicons == true then
+newstring.text.icon.Visible = true
+newstring.text.icon.Image = &quot;http://www.roblox.com/asset/?id=127188050&quot;
+else
+newstring.text.icon.Visible = false
+end
+else
+&#9;if script.Parent.Parent.BadWord.Value ~= true then
+&#9;&#9;newstring.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;newstring.text.Text = player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstring.shadow.Text = player.Name.. &quot;: &quot; ..msg
+&#9;else
+&#9;&#9;if script.Parent.Parent.BadWord.Sender.Value ==  player.Name then
+&#9;&#9;&#9;newstring.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;&#9;newstring.text.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;
+&#9;&#9;&#9;newstring.shadow.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;&#9;
+&#9;&#9;else
+&#9;&#9;&#9;newstring.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;&#9;newstring.text.Text = player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = player.Name.. &quot;: &quot; ..msg
+&#9;&#9;end
+&#9;end
+if _G.showicons == true then
+newstring.text.icon.Visible = true
+newstring.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot;
+else
+newstring.text.icon.Visible = false
+end
+if teamtext == true then
+newstring.overlay.TextColor3 = player.TeamColor.Color
+else
+newstring.overlay.TextColor3 = defaultcolor
+end
+end
+end
+local string12sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12sg ~= nil then
+string12sg:remove()
+end
+--
+local string11sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11sg ~= nil then
+string11sg.Position = string11sg.Position - UDim2.new(0,0,0,20)
+string11sg.Name = &quot;string12&quot;
+end
+local string10sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10sg ~= nil then
+string10sg.Position = string10sg.Position - UDim2.new(0,0,0,20)
+string10sg.Name = &quot;string11&quot;
+end
+local string9sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9sg ~= nil then
+string9sg.Position = string9sg.Position - UDim2.new(0,0,0,20)
+string9sg.Name = &quot;string10&quot;
+end
+local string8sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8sg ~= nil then
+string8sg.Position = string8sg.Position - UDim2.new(0,0,0,20)
+string8sg.Name = &quot;string9&quot;
+end
+local string7sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7sg ~= nil then
+string7sg.Position = string7sg.Position - UDim2.new(0,0,0,20)
+string7sg.Name = &quot;string8&quot;
+end
+local string6sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6sg ~= nil then
+string6sg.Position = string6sg.Position - UDim2.new(0,0,0,20)
+string6sg.Name = &quot;string7&quot;
+end
+local string5sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5sg ~= nil then
+string5sg.Position = string5sg.Position - UDim2.new(0,0,0,20)
+string5sg.Name = &quot;string6&quot;
+end
+local string4sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4sg ~= nil then
+string4sg.Position = string4sg.Position - UDim2.new(0,0,0,20)
+string4sg.Name = &quot;string5&quot;
+end
+local string3sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3sg ~= nil then
+string3sg.Position = string3sg.Position - UDim2.new(0,0,0,20)
+string3sg.Name = &quot;string4&quot;
+end
+local string2sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2sg ~= nil then
+string2sg.Position = string2sg.Position - UDim2.new(0,0,0,20)
+string2sg.Name = &quot;string3&quot;
+end
+local string1sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1sg ~= nil then
+string1sg.Position = string1sg.Position - UDim2.new(0,0,0,20)
+string1sg.Name = &quot;string2&quot;
+end
+local newstringsg = game.StarterGui.Chat.Frame.templatestring:clone()
+newstringsg.Name = &quot;string1&quot;
+newstringsg.Parent = game.StarterGui.Chat.Frame
+newstringsg.Position = UDim2.new(0,20,0,550)
+newstringsg.Visible = true
+if isOwner_ then
+&#9;local delimiter_point=msg:find(&quot; &quot;, 1, true)
+&#9;if svradminAlias.Value == &apos;~null&apos; then
+&#9;&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;else
+&#9;&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;end
+&#9;&#9;--
+&#9;&#9;newstringsg.text.TextColor3 = ownercolor
+&#9;&#9;newstringsg.overlay.TextColor3 = ownerOcolor
+&#9;else
+&#9;&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;&#9;newstringsg.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstringsg.shadow.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;&#9;newstringsg.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = svradminAlias.Value.. &quot;: [Command Executed]&quot;
+&#9;&#9;&#9;newstringsg.shadow.Text = svradminAlias.Value.. &quot;: [Command Executed]&quot;
+&#9;&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;&#9;newstringsg.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = svradminAlias.Value.. &quot;: [Kick Executed]&quot;
+&#9;&#9;&#9;newstringsg.shadow.Text = svradminAlias.Value.. &quot;: [Kick Executed]&quot;
+&#9;&#9;else
+&#9;&#9;&#9;newstringsg.overlay.Text = svradminAlias.Value.. &quot;:  &quot;
+&#9;&#9;&#9;newstringsg.text.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstringsg.shadow.Text = svradminAlias.Value.. &quot;: &quot; ..msg
+&#9;&#9;end
+&#9;&#9;if teamtext == true then
+&#9;&#9;&#9;newstringsg.overlay.TextColor3 = player.TeamColor.Color
+&#9;&#9;else
+&#9;&#9;&#9;newstringsg.overlay.TextColor3 = defaultcolor
+&#9;&#9;end
+&#9;end&#9;
+elseif isAdmin_ then
+&#9;local delimiter_point=msg:find(&quot; &quot;, 1, true)
+&#9;if delimiter_point == nil and CheckCmd==nil then
+&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;elseif delimiter_point and (script.Parent.Parent.CMDexe.Value ~= &apos;Kick&apos;) and (CheckCmd~=nil) then
+&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Command Executed]&quot;
+&#9;elseif delimiter_point and script.Parent.Parent.CMDexe.Value == &apos;Kick&apos; then
+&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: [Kick Executed]&quot;
+&#9;else
+&#9;&#9;newstringsg.overlay.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;:  &quot;
+&#9;&#9;newstringsg.text.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstringsg.shadow.Text = &quot;[&quot; ..admintitle2.. &quot;] &quot; ..player.Name.. &quot;: &quot; ..msg
+&#9;end
+&#9;if teamtext == true then
+&#9;newstringsg.overlay.TextColor3 = player.TeamColor.Color
+&#9;else
+&#9;newstringsg.overlay.TextColor3 = admincolor
+&#9;end
+if teamtext == true then
+newstringsg.overlay.TextColor3 = player.TeamColor.Color
+else
+newstringsg.overlay.TextColor3 = admincolor
+end
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot;
+else
+newstringsg.text.icon.Visible = false
+end
+else
+&#9;if script.Parent.Parent.BadWord.Value ~= true then
+&#9;&#9;newstringsg.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;newstringsg.text.Text = player.Name.. &quot;: &quot; ..msg
+&#9;&#9;newstringsg.shadow.Text = player.Name.. &quot;: &quot; ..msg
+&#9;else
+&#9;&#9;if script.Parent.Parent.BadWord.Sender.Value == player.Name then
+&#9;&#9;&#9;newstringsg.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;&#9;newstringsg.text.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;
+&#9;&#9;&#9;newstringsg.shadow.Text = player.Name.. &quot;: Bad Word Detected; Message Removed!&quot;
+&#9;&#9;else
+&#9;&#9;&#9;newstring.overlay.Text = player.Name.. &quot;: &quot;
+&#9;&#9;&#9;newstring.text.Text = player.Name.. &quot;: &quot; ..msg
+&#9;&#9;&#9;newstring.shadow.Text = player.Name.. &quot;: &quot; ..msg&#9;
+&#9;&#9;end
+&#9;end
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = &quot;http://www.roblox.com/asset/?id=0&quot;
+else
+newstringsg.text.icon.Visible = false
+end
+if teamtext == true then
+newstringsg.overlay.TextColor3 = player.TeamColor.Color
+else
+newstringsg.overlay.TextColor3 = defaultcolor
+end
+end
+end
+end
+
+------------------------------------------------------------------------------------------------------------------
+--[[
+         ___       _             _          _____                                                 _      
+        / _ \     | |           (_)        /  __ \                                               | |     
+       / /_\ \  __| | _ __ ___   _  _ __   | /  \/  ___   _ __ ___   _ __ ___    __ _  _ __    __| | ___ 
+       |  _  | / _` || &apos;_ ` _ \ | || &apos;_ \  | |     / _ \ | &apos;_ ` _ \ | &apos;_ ` _ \  / _` || &apos;_ \  / _` |/ __|
+       | | | || (_| || | | | | || || | | | | \__/\| (_) || | | | | || | | | | || (_| || | | || (_| |\__ \
+       \_| |_/ \__,_||_| |_| |_||_||_| |_|  \____/ \___/ |_| |_| |_||_| |_| |_| \__,_||_| |_| \__,_||___/
+                                                                                                         
+                                                                                                         
+--]] --Yogi Tomasch : YuguScript
+------------------------------------------------------------------------------------------------------------------
+
+print (&quot;YuguScript: &quot;..&quot;Admin Commands Enabled&quot;)
+setcmd = script.Parent.Parent.CMDexe
+setcmd.Value = &quot;~&quot;
+--
+function blockchat(argX)
+&#9;subject = game.Players:findFirstChild(argX)
+&#9;if subject.PlayerGui:findFirstChild(&apos;IsBlocked&apos;) then
+&#9;&#9;setcmd.WasBlocked.Value = argX
+&#9;&#9;setcmd.Value = &apos;UnBlock&apos;
+&#9;&#9;subject.PlayerGui.IsBlocked:remove()
+&#9;&#9;postInfoGlobal(subject.Name..&quot;&apos;s Chat Is Now UnBlocked!&quot;)
+&#9;&#9;wait(7)
+&#9;&#9;setcmd.WasBlocked.Value = &apos;~null&apos;
+&#9;&#9;wait(1)
+&#9;else
+&#9;&#9;setcmd.Value = &apos;Block&apos;
+&#9;&#9;setcmd.WasBlocked.Value = argX
+&#9;&#9;SetBlock = script.Parent.Parent.ItemHold.IsBlocked:Clone()
+&#9;&#9;SetBlock.Parent = subject.PlayerGui
+&#9;&#9;postInfoGlobal(subject.Name..&quot;&apos;s Chat Is Now Blocked!&quot;)
+&#9;&#9;wait(7)
+&#9;&#9;setcmd.WasBlocked.Value = &apos;~null&apos;
+&#9;&#9;wait(1)
+&#9;end
+end
+
+function showError(plrR, res)
+&#9;plr = game.Players:FindFirstChild(plrR)
+&#9;copyGUI = script.Parent.Parent.ItemHold.Error:Clone()
+&#9;if plr then
+&#9;&#9;copyGUI.Parent = plr.PlayerGui
+&#9;end
+&#9;print(&apos;YuguScript: &apos;..&apos;[ShowError] [&apos;..plrR..&apos;]&apos;)
+&#9;local x = 0
+&#9;copyGUI.T.Text = (&apos;YuguScript: &apos;..res)
+&#9;local C = 0
+&#9;while x &lt; 17 do
+&#9;&#9;x = x + 1
+&#9;&#9;wait(0.3)
+&#9;&#9;if C == 0 then
+&#9;&#9;&#9;copyGUI.T.TextColor3  = Color3.new(255/255, 0/255, 4/255)
+&#9;&#9;&#9;C = 1
+&#9;&#9;else
+&#9;&#9;&#9;copyGUI.T.TextColor3  = Color3.new(0/255, 0/255, 0/255)
+&#9;&#9;&#9;C = 0
+&#9;&#9;end
+&#9;end
+&#9;wait(1)
+&#9;if copyGUI then
+&#9;&#9;copyGUI:remove()
+&#9;end
+&#9;wait(2)
+&#9;if copyGUI then
+&#9;&#9;copyGUI:remove()
+&#9;end
+end
+
+function shortcutDet(cmd,ar,se,ra) --shortcutDet(command,arg,sender,rank)
+&#9;local arg0 = string.lower(ar)
+&#9;if cmd == &apos;sc&apos; then
+&#9;&#9;Adminchat((&apos;scream &apos;..ar), se, ra)
+&#9;elseif cmd == &apos;k&apos; then
+&#9;&#9;Adminchat((&apos;kick &apos;..ar), se, ra)
+&#9;end
+end
+
+function kickP(plr, resa, type)
+&#9;&#9;local x = game.Players:findFirstChild(plr)
+&#9;&#9;if x.Character then
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Value = true
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.NameR.Value = (plr)&#9;
+&#9;&#9;&#9;if resa ~= nil then 
+&#9;&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Res.Value = resa
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Res.Value = &apos;No Reason!&apos;
+&#9;&#9;&#9;end&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;if type == &apos;ban&apos; then
+&#9;&#9;&#9;&#9;postInfoGlobal(plr..&apos; Was Banned From The Server!&apos;)
+&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..plr..&apos; Banned Player Detected And Removed.&apos;)
+&#9;&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Type.Value = &apos;ban&apos;
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Type.Value = &apos;~null&apos;
+&#9;&#9;&#9;&#9;postInfoGlobal(plr..&apos; Was Kicked From The Server!&apos;)
+&#9;&#9;&#9;end
+&#9;&#9;&#9;getGUI = script.Parent.Parent.ItemHold.OnKickGui:Clone()
+&#9;&#9;&#9;getGUI.Parent = x.PlayerGui
+&#9;&#9;&#9;getGUI.Frame.ResT.Text = script.Parent.Parent.PlayerKicked.Res.Value
+&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Value = false
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.NameR.Value = &apos;null~&apos;
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Res.Value  = &apos;null~&apos;
+&#9;&#9;&#9;script.Parent.Parent.PlayerKicked.Type.Value = &apos;~null&apos;
+&#9;&#9;&#9;wait(4)
+&#9;&#9;&#9;dal = 10
+&#9;&#9;&#9;x.Character:remove()
+&#9;&#9;&#9;while dal &gt; 0 do
+&#9;&#9;&#9; dal = dal - 1
+&#9;&#9;&#9; getGUI.Frame.ResT.Text = (&quot;[Removal In: &quot;..dal..&quot;]&quot;)
+&#9;&#9;&#9; wait(1)
+&#9;&#9;&#9;end
+&#9;&#9;&#9;getGUI:remove()
+&#9;&#9;&#9;findpass = x:findFirstChild(&quot;unKick&quot;)
+&#9;&#9;&#9;if findpass ~= nil then
+&#9;&#9;&#9;&#9;postInfoGlobal(plr..&quot;&apos;s Kick Was Undone!&quot;)
+&#9;&#9;&#9;&#9;x:LoadCharacter()
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;addEvent(&apos;Detected_Event&apos;, (x.Name), &apos;KICKED&apos;)
+&#9;&#9;&#9;&#9;x:remove()
+&#9;&#9;&#9;end&#9;&#9;&#9;
+&#9;&#9;&#9;wait(5)
+&#9;&#9;end
+end
+function Adminchat(msg, sender, rank)
+&#9;setcmd.Value = &quot;nil&quot;
+&#9;local delimiter_point=msg:find(&quot; &quot;, 1, true)
+&#9;if delimiter_point == nil then
+&#9;&#9;msgX = (msg..&apos; &apos;)
+&#9;&#9;msg = msgX
+&#9;&#9;local delimiter_point=msgX:find(&quot; &quot;, 1, true)
+&#9;&#9;--local delimiter_point=delimiter_point:sub()
+&#9;end
+&#9;local startP=msg:find(&quot; &quot;, (delimiter_point+1), true)
+&#9;if delimiter_point then 
+&#9;&#9;if startP then
+&#9;&#9;&#9;local commandx = msg:sub(1, delimiter_point-1)
+&#9;&#9;&#9;local command = string.lower(commandx)
+&#9;&#9;&#9;local arg = msg:sub(delimiter_point+1, startP-1)
+&#9;&#9;&#9;local arg2 = msg:sub(startP+1)
+&#9;&#9;&#9;addEvent(command, (sender), &apos;CMD&apos;)
+&#9;&#9;&#9;if command == &quot;kick&quot; then
+&#9;&#9;&#9;&#9;kickP(arg, arg2)
+&#9;&#9;&#9;end&#9;
+&#9;&#9;elseif startP == nil then
+&#9;&#9;&#9;local commandx = msg:sub(1, delimiter_point-1)
+&#9;&#9;&#9;local command = string.lower(commandx)
+&#9;&#9;&#9;local arg = msg:sub(delimiter_point+1)  
+&#9;&#9;&#9;--arg = string.gsub(arg, &quot;&quot;, &quot; &quot;)   [**FIX THIS**]
+&#9;&#9;&#9;addEvent(command, (sender), &apos;CMD&apos;)
+&#9;&#9;&#9;
+&#9;&#9;&#9;
+&#9;&#9;&#9;if arg == nil then
+&#9;&#9;&#9;&#9;arg = (sender)
+&#9;&#9;&#9;end
+&#9;&#9;&#9;
+&#9;&#9;&#9;if string.lower(arg) == &apos;me&apos; then
+&#9;&#9;&#9;&#9;arg = sender
+&#9;&#9;&#9;end
+&#9;&#9;&#9;--postInfoGlobal(command..&quot;(&quot;..delimiter_point..&quot;)&quot;..arg)&#9;&#9;[for debuging 1 arg cmds]&#9;
+&#9;&#9;&#9;if command == &quot;kick&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;Kick&quot;
+&#9;&#9;&#9;&#9;kickP(arg, &apos;~The Admin Provided No Reason~&apos;)
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &apos;block&apos; then
+&#9;&#9;&#9;&#9;blockchat(arg)
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &apos;say&apos; then
+&#9;&#9;&#9;&#9;postInfoGlobal(arg)
+&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;ban&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;Ban&quot;
+&#9;&#9;&#9;&#9;kickP(arg, &apos;[You Are Banned From This Server!]&apos;,&apos;ban&apos;)
+&#9;&#9;&#9;&#9;BanVar = Instance.new(&quot;StringValue&quot;, script.BannedPlayers)
+&#9;&#9;&#9;&#9;BanVar.Name = arg&#9;&#9;
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;airstrike&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;AirStrike&quot;
+&#9;&#9;&#9;&#9;if rank == &apos;Owner&apos; then
+&#9;&#9;&#9;&#9;&#9;local plrZ = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;&#9;Tool = game.Lighting.NukeTool:Clone()
+&#9;&#9;&#9;&#9;&#9;Tool.Parent = plrZ.Backpack
+&#9;&#9;&#9;&#9;&#9;Tool.Handle.Anchored = false
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;alias&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;Alias&quot;
+&#9;&#9;&#9;&#9;if rank == &apos;Owner&apos; then
+&#9;&#9;&#9;&#9;&#9;local plrAD = game.Players:findFirstChild(sender)
+&#9;&#9;&#9;&#9;&#9;if plrAD.Name == &quot;ImmaBeastX&quot; then
+&#9;&#9;&#9;&#9;&#9;&#9;if arg ~= &quot;none&quot; then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;script.Parent.Parent.Variables.Alias.ImmaBeastX.Value = arg
+&#9;&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;script.Parent.Parent.Variables.Alias.ImmaBeastX.Value = &apos;~null&apos;
+&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;elseif command == &quot;crandom&quot; then
+&#9;&#9;&#9;&#9;if rank == &apos;Owner&apos; then
+&#9;&#9;&#9;&#9;&#9;if OwnerRandom == true then
+&#9;&#9;&#9;&#9;&#9;&#9;OwnerRandom = false
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;OwnerRandom = true
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;gblock&quot; then
+&#9;&#9;&#9;&#9;if _G.GlobalBlock == true then
+&#9;&#9;&#9;&#9;&#9;_G.GlobalBlock = false
+&#9;&#9;&#9;&#9;&#9;postInfoGlobal(&apos;Global Chat Is Now UnBlocked!&apos;)
+&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;_G.GlobalBlock = true
+&#9;&#9;&#9;&#9;&#9;postInfoGlobal(&apos;Global Chat Is Now Blocked!&apos;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;globalcblock&quot; then
+&#9;&#9;&#9;&#9;if _G.GlobalCBlock == true then
+&#9;&#9;&#9;&#9;&#9;_G.GlobalCBlock = false
+&#9;&#9;&#9;&#9;&#9;postInfoGlobal(&apos;All Commands Are Now Enabled!&apos;)
+&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;_G.GlobalCBlock = true
+&#9;&#9;&#9;&#9;&#9;prostInfoGlobal(&quot;All Commands Are Now Disabled!&quot;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &apos;ping&apos; then
+&#9;&#9;&#9;&#9;RepPing = 0
+&#9;&#9;&#9;&#9;while RepPing &lt; 5 do
+&#9;&#9;&#9;&#9;&#9;RepPing = RepPing + 1
+&#9;&#9;&#9;&#9;&#9;postInfoGlobal(&apos;Pong x&apos;..RepPing)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;ghost&quot; then
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;ghost&quot;
+&#9;&#9;&#9;&#9;if game.Players:findFirstChild(arg) then
+&#9;&#9;&#9;&#9;&#9;local x = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;&#9;if x.Character then
+&#9;&#9;&#9;&#9;&#9;&#9;a = x.Character:GetChildren()
+&#9;&#9;&#9;&#9;&#9;&#9;for k, v in pairs(a) do
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;if v:IsA(&quot;Part&quot;) then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;wait(0.1)
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if v.Name ~= &quot;HumanoidRootPart&quot; then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if v.Transparency == 1 then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;v.Transparency = 0
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;v.Transparency = 1
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if v.Name == &quot;Head&quot; then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;face = v:findFirstChild(&apos;face&apos;)
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if face then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;face:remove()
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end&#9;&#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;if v:IsA(&quot;Hat&quot;) then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;wait(0.1)
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;v:remove()
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;unkick&quot; then
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;unKick&quot;
+&#9;&#9;&#9;&#9;local plrAD = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;if plrAD then
+&#9;&#9;&#9;&#9;&#9;SetAdmin = script.Parent.Parent.ItemHold.unKick:Clone()
+&#9;&#9;&#9;&#9;&#9;SetAdmin.Parent = plrAD
+&#9;&#9;&#9;&#9;&#9;wait(20)
+&#9;&#9;&#9;&#9;&#9;SetAdmin:remove()
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;scream&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;Scream&quot;
+&#9;&#9;&#9;&#9;if rank == &apos;Owner&apos; then
+&#9;&#9;&#9;&#9;&#9;if arg ~= &quot;~&quot; then
+&#9;&#9;&#9;&#9;&#9;&#9;script.Parent.Parent.Shout.Value = arg
+&#9;&#9;&#9;&#9;&#9;&#9;wait(5)
+&#9;&#9;&#9;&#9;&#9;&#9;script.Parent.Parent.Shout.Value = &apos;~&apos;
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;script.Parent.Parent.Shout.Value = &apos;~&apos;
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end&#9;
+&#9;&#9;&#9;elseif command == &quot;respawn&quot; then
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;respawn&quot;
+&#9;&#9;&#9;&#9;plrX = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;if plrX then
+&#9;&#9;&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;&#9;&#9;plrX:ClearCharacterAppearance()
+&#9;&#9;&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;&#9;&#9;plrX:LoadCharacter()
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;nude&quot; then
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;nude&quot;
+&#9;&#9;&#9;&#9;plrX = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;if plrX then
+&#9;&#9;&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;&#9;&#9;plrX:ClearCharacterAppearance()
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;cmds&quot; then
+&#9;&#9;&#9;&#9;setGUIs(&apos;CLG&apos;,&apos;send&apos;,sender)   &#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;admin&quot; then 
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;setAdmin&quot;
+&#9;&#9;&#9;&#9;if arg ~= nil then
+&#9;&#9;&#9;&#9;&#9;local plrAD = game.Players:findFirstChild(arg)
+&#9;&#9;&#9;&#9;&#9;isAdmin = plrAD:findFirstChild(&apos;IsAdmin&apos;)
+&#9;&#9;&#9;&#9;&#9;if isAdmin then
+&#9;&#9;&#9;&#9;&#9;&#9;isAdmin:remove()
+&#9;&#9;&#9;&#9;&#9;&#9;postInfoGlobal(plrAD.Name..&quot;&apos;s Administrative Permissions Were Removed!&quot;)
+&#9;&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;&#9;SetAdmin = script.Parent.Parent.ItemHold.IsAdmin:Clone()
+&#9;&#9;&#9;&#9;&#9;&#9;SetAdmin.Parent = plrAD
+&#9;&#9;&#9;&#9;&#9;&#9;postInfoGlobal(plrAD.Name..&quot; Was Given Temporary Administative Permissions!&quot;)
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &quot;sit&quot; then
+&#9;&#9;&#9;&#9;setcmd.Value = &quot;sit&quot;
+&#9;&#9;&#9;&#9;if game.Players:findFirstChild(arg) then
+
+&#9;&#9;&#9;&#9;&#9;  x = game.Players:findFirstChild(arg)
+
+&#9;&#9;&#9;&#9;&#9;if x.Character then
+&#9;&#9;&#9;&#9;&#9;&#9;playerX = game.Players:findFirstChild(x.Name)
+&#9;&#9;&#9;&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;&#9;&#9;&#9;---------------
+&#9;&#9;&#9;&#9;&#9;&#9;playerX.Character.Humanoid.Sit = true
+&#9;&#9;&#9;&#9;&#9;&#9;---------------
+&#9;
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;elseif command == &apos;sc&apos; then
+&#9;&#9;&#9;&#9;shortcutDet(command,arg,sender,rank)
+&#9;&#9;&#9;elseif command == &apos;k&apos; then
+&#9;&#9;&#9;&#9;shortcutDet(command,arg,sender,rank)
+&#9;&#9;&#9;&#9;
+&#9;&#9;&#9;msg2 = string.sub(msg,2)
+&#9;&#9;&#9;local CheckC = msg:find(&quot;!&quot;)
+&#9;&#9;&#9;CheckB = msg2:find(&quot;!&quot;)
+&#9;&#9;&#9;elseif CheckC and (CheckC == nil or (CheckB == nil and CheckC==nil) or msg2 == nil or command == nil or command == &apos;&apos; or command == &apos; &apos; or arg == &apos;&apos; or arg == &apos; &apos; or arg == nil) then
+&#9;&#9;&#9;&#9;showError(sender, &apos; Missing Argument!&apos;)
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;--showError(sender, &apos;                Syntax Error!&apos;)
+&#9;&#9;&#9;end
+&#9;&#9;&#9;
+&#9;&#9;end
+&#9;end
+end
+
+function getTr(pl)
+&#9;CheckTr = true
+&#9;while CheckTr == true do
+&#9;&#9;wait(1)
+&#9;&#9;if pl then
+&#9;&#9;&#9;obj = pl.PlayerGui.ChildAdded:connect(function(child)
+&#9;&#9;&#9;&#9;if obj then
+&#9;&#9;&#9;&#9;&#9;obj:remove()
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end)
+&#9;&#9;else
+&#9;&#9;&#9;CheckTr = false
+&#9;&#9;end
+&#9;end
+end
+
+function giveItems(plr)
+&#9;local ChatGUI = script.Parent.Parent.ItemHold.Chat:Clone()
+&#9;local AnGUI = script.Parent.Parent.ItemHold.MessAnn:Clone()
+&#9;local KickGUI = script.Parent.Parent.ItemHold.OnKickGui:Clone()
+&#9;ChatGUI.Parent = plr.PlayerGui
+&#9;AnGUI.Parent = plr.PlayerGui
+&#9;KickGUI.Parent = plr.PlayerGui
+&#9;wait(1)
+&#9;plr.PlayerGui.MessAnn.LocalScript.Disabled = false
+&#9;plr.PlayerGui.OnKickGui.LocalScript.Disabled = false
+end
+
+function playerjoined(plr)
+&#9;bannedplayer = script.BannedPlayers:findFirstChild(plr)
+&#9;if bannedplayer then
+&#9;&#9;wait(5)
+&#9;&#9;if bannedplayer.Value ~= &apos;&apos; then
+&#9;&#9;&#9;kickP(plr, bannedplayer.Value, &apos;ban&apos;)
+&#9;&#9;else
+&#9;&#9;&#9;kickP(plr, &apos;[You Are Banned]&apos;, &apos;ban&apos;)
+&#9;&#9;end
+&#9;else
+&#9;&#9;local plrJ = Instance.new(&quot;StringValue&quot;,script.Parent.Oplayers)
+&#9;&#9;plrJ.Name = (string.lower(plr))
+&#9;&#9;plrJ.Value = game.Workspace.DistributedGameTime + 0.05
+&#9;&#9;script.Parent.Parent.PlayerEnteredX.NameR.Value = plr
+&#9;&#9;script.Parent.Parent.PlayerEnteredX.Value = true
+&#9;&#9;wait(1)
+&#9;&#9;script.Parent.Parent.PlayerEnteredX.Value = false
+&#9;&#9;script.Parent.Parent.PlayerEnteredX.NameR.Value = &apos;~null&apos;
+&#9;&#9;addEvent(&apos;Detected_Event&apos;, (plr), &apos;Join&apos;)
+&#9;&#9;truePlayer = game.Players:FindFirstChild(plr)
+&#9;&#9;--getAprint(player.Name)
+&#9;&#9;if truePlayer then
+&#9;&#9;&#9;truePlayer:LoadCharacter()
+&#9;&#9;&#9;postInfoGlobal(plr..&quot; Has Joined The Server!&quot;)
+&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Force Spawned:[&quot;..truePlayer.Name..&quot;]!&quot;)
+&#9;&#9;end
+&#9;end
+end
+
+function HooKdetect()
+&#9;a = script:GetChildren()
+&#9;for k, v in pairs(a) do
+&#9;&#9;if v:IsA(&quot;Script&quot;) then
+&#9;&#9;&#9;print (&quot;[Hook] YuguScript: &quot;..(v.Name)..&apos; Enabled.&apos;)
+&#9;&#9;end
+&#9;end
+end
+
+function setAdmin(plr)
+&#9;if script.Parent.Ranks.Admins:findFirstChild(plr) then
+&#9;&#9;local plrAD = game.Players:findFirstChild(plr)
+&#9;&#9;SetAdmin = script.Parent.Parent.ItemHold.IsAdmin:Clone()
+&#9;&#9;SetAdmin.Parent = plrAD
+&#9;&#9;local plrAD2 = game.Players:findFirstChild(plr)
+&#9;&#9;SA2 = script.Parent.Parent.ItemHold.IsAdmin:Clone()
+&#9;&#9;SA2.Parent = script.Parent.Oplayers.OA&#9;&#9;
+&#9;&#9;SA2.Name = (string.lower(plrAD.Name))
+&#9;end
+&#9;if script.Parent.Ranks.Owner:findFirstChild(plr) then
+&#9;&#9;local plrOW = game.Players:findFirstChild(plr)
+&#9;&#9;SetAdmin = script.Parent.Parent.ItemHold.IsOwner:Clone()
+&#9;&#9;SetAdmin.Parent = plrOW
+&#9;&#9;local plrOW2 = game.Players:findFirstChild(plr)
+&#9;&#9;SO2 = script.Parent.Parent.ItemHold.IsAdmin:Clone()
+&#9;&#9;SO2.Parent = script.Parent.Oplayers.OA&#9;&#9;
+&#9;&#9;SO2.Name = (string.lower(plrOW.Name))
+&#9;end&#9;
+&#9;getAprint(plr)
+&#9;defMessage()
+end
+
+function playerLeave(playerN)
+&#9;find = script.Parent.Oplayers:FindFirstChild(playerN)
+&#9;if find ~= nil then
+&#9;&#9;print(&quot;YuguScript: &quot;..playerN..&apos; Has Left The Game.&apos;)
+&#9;&#9;postInfoGlobal(plr..&quot; Has Left The Server!&quot;)
+&#9;&#9;find:remove()
+&#9;end
+end
+
+function wtrmak()
+&#9;if wtrs == true then
+&#9;&#9;while wtrs == true do
+&#9;&#9;&#9;postGlobalInfo(&apos;YuguScript By ImmaBeastX&apos;)
+&#9;&#9;&#9;wait(15)
+&#9;&#9;end
+&#9;end
+end
+
+
+function setGUIs(selection, argumentA, argumentB, argumentC)
+&#9;if argumentA == &quot;send&quot; then -- [Gui_Name, Mode, Player]
+&#9;&#9;findP = game.Players:findFirstChild(argumentB)
+&#9;&#9;Item = game.StarterGui:FindFirstChild(selection)
+&#9;&#9;if Item == nil then
+&#9;&#9;&#9;LGui = script.Parent.Parent.ItemHold:FindFirstChild(selection)
+&#9;&#9;&#9;if LGui then
+&#9;&#9;&#9;&#9;if LGui.ClassName == &apos;ScreenGui&apos; then
+&#9;&#9;&#9;&#9;&#9;local CopyGUI = LGui:Clone()
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Parent = findP.PlayerGui
+&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Cloned &quot;..CopyGUI.Name..&quot; To PlayerGui&quot;)
+&#9;&#9;&#9;&#9;&#9;x = 20
+&#9;&#9;&#9;&#9;&#9;wait(2)
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Frame.H.BackgroundColor3 = Color3.new(255/255, 0/255, 0/255)
+&#9;&#9;&#9;&#9;&#9;while x &gt; 0 do
+&#9;&#9;&#9;&#9;&#9;&#9;CopyGUI.Frame.H.Text = (&quot;[&quot;..x..&quot;]&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;x = (x-1)
+&#9;&#9;&#9;&#9;&#9;&#9;wait(1)
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Frame.H.Text = (&quot;Deleting&quot;)
+&#9;&#9;&#9;&#9;&#9;wait(2)
+&#9;&#9;&#9;&#9;&#9;if CopyGUI ~= nil then
+&#9;&#9;&#9;&#9;&#9;&#9;CopyGUI:remove()
+&#9;&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Temp GUI (&quot;..CopyGUI.Name..&quot;) Was Removed from players backpack.&quot;)
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;if LGui.ClassName == &apos;Tool&apos; then
+&#9;&#9;&#9;&#9;&#9;local CopyGUI = LGui:Clone()
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Parent = findP.Backpack
+&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Cloned &quot;..CopyGUI.Name..&quot; To PlayerPack&quot;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end
+&#9;&#9;end&#9;&#9;
+&#9;end
+&#9;if selection ~= nil and argumentA ~= &quot;send&quot; then
+&#9;&#9;Item = game.StarterGui:FindFirstChild(selection)
+&#9;&#9;if Item == nil then
+&#9;&#9;&#9;LGui = script.Parent.Parent.ItemHold:FindFirstChild(selection)
+&#9;&#9;&#9;if LGui then
+&#9;&#9;&#9;&#9;if LGui.ClassName == &apos;ScreenGui&apos; then
+&#9;&#9;&#9;&#9;&#9;local CopyGUI = LGui:Clone()
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Parent = game.StarterGui
+&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Cloned &quot;..CopyGUI.Name..&quot; To StarterGui&quot;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;if LGui.ClassName == &apos;Tool&apos; then
+&#9;&#9;&#9;&#9;&#9;local CopyGUI = LGui:Clone()
+&#9;&#9;&#9;&#9;&#9;CopyGUI.Parent = game.StarterPack
+&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..&quot;Cloned &quot;..CopyGUI.Name..&quot; To StarterPack&quot;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end
+&#9;&#9;end
+&#9;end
+end
+------------------------------------------------------------------------------------------------------------------
+--[[
+            _____                    _     _____      _                                
+           |  ___|                  | |   |_   _|    (_)                               
+           | |__ __   __ ___  _ __  | |_    | | _ __  _   __ _   __ _   ___  _ __  ___ 
+           |  __|\ \ / // _ \| &apos;_ \ | __|   | || &apos;__|| | / _` | / _` | / _ \| &apos;__|/ __|
+           | |___ \ V /|  __/| | | || |_    | || |   | || (_| || (_| ||  __/| |   \__ \
+           \____/  \_/  \___||_| |_| \__|   \_/|_|   |_| \__, | \__, | \___||_|   |___/
+                                                          __| |  __| |                 
+                                                         |___/  |___/                  
+--]] -- Yogi Tomasch : YuguScript
+------------------------------------------------------------------------------------------------------------------
+HooKdetect()
+
+
+game.Players.PlayerAdded:connect(function(plr)
+&#9;setGUIs(&apos;Chat&apos;)
+&#9;wait(0.1)
+&#9;--giveItems(plr)
+&#9;plrR = plr.Name
+&#9;playerjoined(plrR)
+&#9;wait(0.1)
+&#9;setAdmin(plrR)
+&#9;wait(0.1)
+&#9;plr:LoadCharacter()
+&#9;--getTr(plr)
+&#9;repeat wait() until plr.Character
+&#9;plr.Chatted:connect(function(msg)
+&#9;&#9;wait(0.1)
+&#9;&#9;if plr.PlayerGui:findFirstChild(&apos;IsBlocked&apos;) then
+&#9;&#9;&#9;print(&quot;YuguScript: &quot;..plrR..&apos; Tried To Chat While (His/Her) Chat Was Blocked!&apos;)
+&#9;&#9;else
+&#9;&#9;&#9;if _G.GlobalBlock == false then
+&#9;&#9;&#9;&#9;ChattedLast5 = plr:findFirstChild(&apos;chattedlast5&apos;)
+&#9;&#9;&#9;&#9;if ChattedLast5 then
+&#9;&#9;&#9;&#9;&#9;print(&apos;YuguScript: Player Possible Spam Removed!&apos;)
+&#9;&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;&#9;playerchatted(plr, msg)
+&#9;&#9;&#9;&#9;&#9;print(&quot;YuguScript: (&quot;..plrR..&apos; Chatted: [ &apos;..msg..&apos; ])&apos;)
+&#9;&#9;&#9;&#9;&#9;GenChatLast5 = Instance.new(&apos;StringValue&apos;,plr)
+&#9;&#9;&#9;&#9;&#9;GenChatLast5.Name = (&apos;chattedlast5&apos;)
+&#9;&#9;&#9;&#9;&#9;if chatSlimit == nil then
+&#9;&#9;&#9;&#9;&#9;&#9;chatSlimit = 1
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;wait(chatSlimit)
+&#9;&#9;&#9;&#9;&#9;if GenChatLast5 then
+&#9;&#9;&#9;&#9;&#9;&#9;GenChatLast5:remove()
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;else
+&#9;&#9;&#9;&#9;print(&quot;YuguScript: &quot;..plrR..&apos; Tried To Chat While Global Chat Is Blocked!&apos;)
+&#9;&#9;&#9;end
+&#9;&#9;end
+&#9;&#9;wait(0.1)
+&#9;&#9;if _G.GlobalCBlock == false then 
+&#9;&#9;&#9;if plr:findFirstChild(&apos;IsAdmin&apos;) then
+&#9;&#9;&#9;&#9;local CheckC = msg:find(&quot;!&quot;)
+&#9;&#9;&#9;&#9;if CheckC ~= nil and CheckC == 1 then
+&#9;&#9;&#9;&#9;&#9;msg2 = string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;Adminchat(msg2, plrR, &apos;Admin&apos;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;elseif plr:findFirstChild(&apos;IsOwner&apos;) then
+&#9;&#9;&#9;&#9;local CheckC = msg:find(&quot;!&quot;)
+&#9;&#9;&#9;&#9;if CheckC ~= nil and CheckC == 1 then
+&#9;&#9;&#9;&#9;&#9;msg2 = string.sub(msg,2)
+&#9;&#9;&#9;&#9;&#9;Adminchat(msg2, plrR, &apos;Owner&apos;)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;end
+&#9;&#9;end
+&#9;end)
+end)
+
+game.Players.PlayerRemoving:connect(function(plr)
+&#9;plrR = plr.Name
+&#9;playerLeave(plrR)
+end)</ProtectedString>
+				</Properties>
+				<Item class="Script" referent="RBX3">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">automatedmessages</string>
+						<ProtectedString name="Source">wait(5)
+local currentmsg = script.currentmsg
+while true do
+for _,v in ipairs(game.Players:GetPlayers()) do
+local checkup = v:findFirstChild(&quot;PlayerGui&quot;)
+if checkup ~= nil then
+--
+local string12 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12 ~= nil then
+string12:remove()
+end
+local string12sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12sg ~= nil then
+string12sg:remove()
+end
+--
+local string11 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11 ~= nil then
+string11.Position = string11.Position - UDim2.new(0,0,0,20)
+string11.Name = &quot;string12&quot;
+end
+local string11sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11sg ~= nil then
+string11sg.Position = string11sg.Position - UDim2.new(0,0,0,20)
+string11sg.Name = &quot;string12&quot;
+end
+local string10 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10 ~= nil then
+string10.Position = string10.Position - UDim2.new(0,0,0,20)
+string10.Name = &quot;string11&quot;
+end
+local string10sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10sg ~= nil then
+string10sg.Position = string10sg.Position - UDim2.new(0,0,0,20)
+string10sg.Name = &quot;string11&quot;
+end
+local string9 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9 ~= nil then
+string9.Position = string9.Position - UDim2.new(0,0,0,20)
+string9.Name = &quot;string10&quot;
+end
+local string9sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9sg ~= nil then
+string9sg.Position = string9sg.Position - UDim2.new(0,0,0,20)
+string9sg.Name = &quot;string10&quot;
+end
+local string8 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8 ~= nil then
+string8.Position = string8.Position - UDim2.new(0,0,0,20)
+string8.Name = &quot;string9&quot;
+end
+local string8sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8sg ~= nil then
+string8sg.Position = string8sg.Position - UDim2.new(0,0,0,20)
+string8sg.Name = &quot;string9&quot;
+end
+local string7 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7 ~= nil then
+string7.Position = string7.Position - UDim2.new(0,0,0,20)
+string7.Name = &quot;string8&quot;
+end
+local string7sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7sg ~= nil then
+string7sg.Position = string7sg.Position - UDim2.new(0,0,0,20)
+string7sg.Name = &quot;string8&quot;
+end
+local string6 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6 ~= nil then
+string6.Position = string6.Position - UDim2.new(0,0,0,20)
+string6.Name = &quot;string7&quot;
+end
+local string6sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6sg ~= nil then
+string6sg.Position = string6sg.Position - UDim2.new(0,0,0,20)
+string6sg.Name = &quot;string7&quot;
+end
+local string5 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5 ~= nil then
+string5.Position = string5.Position - UDim2.new(0,0,0,20)
+string5.Name = &quot;string6&quot;
+end
+local string5sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5sg ~= nil then
+string5sg.Position = string5sg.Position - UDim2.new(0,0,0,20)
+string5sg.Name = &quot;string6&quot;
+end
+local string4 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4 ~= nil then
+string4.Position = string4.Position - UDim2.new(0,0,0,20)
+string4.Name = &quot;string5&quot;
+end
+local string4sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4sg ~= nil then
+string4sg.Position = string4sg.Position - UDim2.new(0,0,0,20)
+string4sg.Name = &quot;string5&quot;
+end
+local string3 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3 ~= nil then
+string3.Position = string3.Position - UDim2.new(0,0,0,20)
+string3.Name = &quot;string4&quot;
+end
+local string3sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3sg ~= nil then
+string3sg.Position = string3sg.Position - UDim2.new(0,0,0,20)
+string3sg.Name = &quot;string4&quot;
+end
+local string2 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2 ~= nil then
+string2.Position = string2.Position - UDim2.new(0,0,0,20)
+string2.Name = &quot;string3&quot;
+end
+local string2sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2sg ~= nil then
+string2sg.Position = string2sg.Position - UDim2.new(0,0,0,20)
+string2sg.Name = &quot;string3&quot;
+end
+local string1 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1 ~= nil then
+string1.Position = string1.Position - UDim2.new(0,0,0,20)
+string1.Name = &quot;string2&quot;
+end
+local string1sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1sg ~= nil then
+string1sg.Position = string1sg.Position - UDim2.new(0,0,0,20)
+string1sg.Name = &quot;string2&quot;
+end
+--
+local newstring = v.PlayerGui.Chat.Frame.templatestring:clone()
+newstring.Name = &quot;string1&quot;
+newstring.Parent = v.PlayerGui.Chat.Frame
+newstring.Position = UDim2.new(0,20,0,550)
+newstring.Visible = true
+newstring.overlay.TextColor3 = _G.svrcolor
+if _G.showicons == true then
+newstring.text.icon.Visible = true
+newstring.text.icon.Image = _G.svricon
+else
+newstring.text.icon.Visible = false
+end
+newstring.overlay.Text = &quot;[Info] &quot;
+newstring.text.Text = &quot;[Info] &quot; .._G.msgs[currentmsg.Value]
+newstring.shadow.Text = &quot;[Info] &quot; .._G.msgs[currentmsg.Value]
+
+local newstringsg = game.StarterGui.Chat.Frame.templatestring:clone()
+newstringsg.Name = &quot;string1&quot;
+newstringsg.Parent = game.StarterGui.Chat.Frame
+newstringsg.Position = UDim2.new(0,20,0,550)
+newstringsg.Visible = true
+newstringsg.overlay.TextColor3 = _G.svrcolor
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = _G.svricon
+else
+newstringsg.text.icon.Visible = false
+end
+newstringsg.overlay.Text = &quot;[Info] &quot;
+newstringsg.text.Text = &quot;[Info] &quot; .._G.msgs[currentmsg.Value]
+newstringsg.shadow.Text = &quot;[Info] &quot; .._G.msgs[currentmsg.Value]
+if currentmsg.Value &gt;= #_G.msgs then
+currentmsg.Value = 1
+else
+currentmsg.Value = currentmsg.Value + 1
+end
+end
+end
+wait(_G.waittime)
+end
+</ProtectedString>
+					</Properties>
+					<Item class="IntValue" referent="RBX4">
+						<Properties>
+							<string name="Name">currentmsg</string>
+							<int name="Value">1</int>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Model" referent="RBX5">
+					<Properties>
+						<CoordinateFrame name="ModelInPrimary">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<string name="Name">BannedPlayers</string>
+						<Ref name="PrimaryPart">null</Ref>
+					</Properties>
+				</Item>
+				<Item class="Script" referent="RBX6">
+					<Properties>
+						<bool name="Disabled">true</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">ForceAdmin</string>
+						<ProtectedString name="Source">game.Players.PlayerAdded:connect(function(plr)
+&#9;wait(1)
+&#9;ForceAdmin = script.Parent.Parent.Parent.ItemHold.IsAdmin:Clone()
+&#9;ForceAdmin.Parent = plr.PlayerGui
+end)
+</ProtectedString>
+					</Properties>
+				</Item>
+				<Item class="Script" referent="RBX7">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">ScreamFunction</string>
+						<ProtectedString name="Source">wait(1)
+while true do
+for _,v in ipairs(game.Players:GetPlayers()) do
+local failSafe = v:findFirstChild(&quot;PlayerGui&quot;)
+if failSafe ~= nil then
+--
+local string12 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12 ~= nil then
+string12:remove()
+end
+local string12sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12sg ~= nil then
+string12sg:remove()
+end
+--
+local string11 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11 ~= nil then
+string11.Position = string11.Position - UDim2.new(0,0,0,20)
+string11.Name = &quot;string12&quot;
+end
+local string11sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11sg ~= nil then
+string11sg.Position = string11sg.Position - UDim2.new(0,0,0,20)
+string11sg.Name = &quot;string12&quot;
+end
+local string10 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10 ~= nil then
+string10.Position = string10.Position - UDim2.new(0,0,0,20)
+string10.Name = &quot;string11&quot;
+end
+local string10sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10sg ~= nil then
+string10sg.Position = string10sg.Position - UDim2.new(0,0,0,20)
+string10sg.Name = &quot;string11&quot;
+end
+local string9 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9 ~= nil then
+string9.Position = string9.Position - UDim2.new(0,0,0,20)
+string9.Name = &quot;string10&quot;
+end
+local string9sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9sg ~= nil then
+string9sg.Position = string9sg.Position - UDim2.new(0,0,0,20)
+string9sg.Name = &quot;string10&quot;
+end
+local string8 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8 ~= nil then
+string8.Position = string8.Position - UDim2.new(0,0,0,20)
+string8.Name = &quot;string9&quot;
+end
+local string8sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8sg ~= nil then
+string8sg.Position = string8sg.Position - UDim2.new(0,0,0,20)
+string8sg.Name = &quot;string9&quot;
+end
+local string7 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7 ~= nil then
+string7.Position = string7.Position - UDim2.new(0,0,0,20)
+string7.Name = &quot;string8&quot;
+end
+local string7sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7sg ~= nil then
+string7sg.Position = string7sg.Position - UDim2.new(0,0,0,20)
+string7sg.Name = &quot;string8&quot;
+end
+local string6 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6 ~= nil then
+string6.Position = string6.Position - UDim2.new(0,0,0,20)
+string6.Name = &quot;string7&quot;
+end
+local string6sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6sg ~= nil then
+string6sg.Position = string6sg.Position - UDim2.new(0,0,0,20)
+string6sg.Name = &quot;string7&quot;
+end
+local string5 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5 ~= nil then
+string5.Position = string5.Position - UDim2.new(0,0,0,20)
+string5.Name = &quot;string6&quot;
+end
+local string5sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5sg ~= nil then
+string5sg.Position = string5sg.Position - UDim2.new(0,0,0,20)
+string5sg.Name = &quot;string6&quot;
+end
+local string4 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4 ~= nil then
+string4.Position = string4.Position - UDim2.new(0,0,0,20)
+string4.Name = &quot;string5&quot;
+end
+local string4sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4sg ~= nil then
+string4sg.Position = string4sg.Position - UDim2.new(0,0,0,20)
+string4sg.Name = &quot;string5&quot;
+end
+local string3 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3 ~= nil then
+string3.Position = string3.Position - UDim2.new(0,0,0,20)
+string3.Name = &quot;string4&quot;
+end
+local string3sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3sg ~= nil then
+string3sg.Position = string3sg.Position - UDim2.new(0,0,0,20)
+string3sg.Name = &quot;string4&quot;
+end
+local string2 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2 ~= nil then
+string2.Position = string2.Position - UDim2.new(0,0,0,20)
+string2.Name = &quot;string3&quot;
+end
+local string2sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2sg ~= nil then
+string2sg.Position = string2sg.Position - UDim2.new(0,0,0,20)
+string2sg.Name = &quot;string3&quot;
+end
+local string1 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1 ~= nil then
+string1.Position = string1.Position - UDim2.new(0,0,0,20)
+string1.Name = &quot;string2&quot;
+end
+local string1sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1sg ~= nil then
+string1sg.Position = string1sg.Position - UDim2.new(0,0,0,20)
+string1sg.Name = &quot;string2&quot;
+end
+--
+local newstring = v.PlayerGui.Chat.Frame.templatestring:clone()
+newstring.Name = &quot;string1&quot;
+newstring.Parent = v.PlayerGui.Chat.Frame
+newstring.Position = UDim2.new(0,20,0,550)
+newstring.Visible = true
+newstring.overlay.TextColor3 = _G.SCREAMcolor
+scrT = script.Parent.Parent.Parent.Shout.Value
+newstring.overlay.Text = &quot;[Info] &quot;
+newstring.text.Text = &quot;[Info] &quot;..(scrT)
+newstring.shadow.Text = &quot;[Info]&quot; ..(scrT)
+newstring.overlay.TextColor3 = Color3.new(math.random(255)/255,math.random(255)/255,math.random(255)/255)
+
+local newstringsg = game.StarterGui.Chat.Frame.templatestring:clone()
+newstringsg.Name = &quot;string1&quot;
+newstringsg.Parent = game.StarterGui.Chat.Frame
+newstringsg.Position = UDim2.new(0,20,0,550)
+newstringsg.Visible = true
+newstringsg.overlay.TextColor3 = _G.SCREAMcolor
+newstringsg.overlay.Text = &quot;[Info] &quot;
+newstringsg.text.Text = &quot;[Info] &quot;..(scrT)
+newstringsg.shadow.Text = &quot;[Info] &quot;..(scrT)
+end
+end
+wait(0.1)
+repeat
+&#9;wait(0.1)
+until script.Parent.Parent.Parent.Shout.Value ~= &apos;~&apos;
+wait(0.1)
+scrT = script.Parent.Parent.Parent.Shout.Value
+end</ProtectedString>
+					</Properties>
+					<Item class="IntValue" referent="RBX8">
+						<Properties>
+							<string name="Name">currentmsg</string>
+							<int name="Value">1</int>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Script" referent="RBX9">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">BadWord Detection</string>
+						<ProtectedString name="Source">function defwords()  --=[WARNING!] (CONTAINS LIST OF BAD WORDS) (Only Open If 14+)
+&#9;wordlist = { &quot;ass&quot;,&quot;testbad&quot;,&quot;@$$&quot;,&quot;@ss&quot; ,&quot;shit&quot;,&quot;damn&quot;,&quot;fuck&quot;,&quot;gay&quot;,&quot;lesbian&quot;,&quot;lesbo&quot;,&quot;lesboe&quot;,&quot;ho&quot;,&quot;hoe&quot;,&quot;retard&quot;,&quot;retarted&quot;,&quot;retarded&quot;,&quot;wth&quot;,&quot;crap&quot;,&quot;wtc&quot;,&quot;wtf&quot;,&quot;balls&quot;,&quot;ballz&quot;,&quot;hell&quot;}
+end
+
+function spoke(msg,speaker)
+&#9;for i=1,#wordlist do
+&#9;&#9;badword=(string.lower(msg)):find((string.lower(wordlist[i])), 1, true)
+&#9;&#9;if badword then
+&#9;&#9;&#9;script.Parent.Parent.Parent.BadWord.Value = true
+&#9;&#9;&#9;script.Parent.Parent.Parent.BadWord.Sender.Value = speaker.Name
+&#9;&#9;&#9;wait(0.1)
+&#9;&#9;&#9;script.Parent.Parent.Parent.BadWord.Value = false
+&#9;&#9;&#9;script.Parent.Parent.Parent.BadWord.Sender.Value = &quot;~&quot;
+&#9;&#9;end
+&#9;end
+end
+
+game.Players.PlayerAdded:connect(function(plr)
+&#9;repeat wait() until plr.Character
+&#9;plr.Chatted:connect(function(msg)
+&#9;&#9;spoke(msg,plr)
+&#9;end)
+end)
+
+
+
+defwords()</ProtectedString>
+					</Properties>
+				</Item>
+				<Item class="Script" referent="RBX10">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">InfoPostManager</string>
+						<ProtectedString name="Source">wait(2)
+local msgColor = _G.svrcolor --Color3.new(255/255,255/255,255/255)   --_G.svrcolor
+local txtColor = Color3.new(0/255,0/255,255/255)
+local currentmsg = &quot;InfoPost Manager By Yogi Tomasch&quot;
+while true do
+for _,v in ipairs(game.Players:GetPlayers()) do
+local checkup = v:findFirstChild(&quot;PlayerGui&quot;)
+if checkup ~= nil then
+--
+local string12 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12 ~= nil then
+string12:remove()
+end
+local string12sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string12&quot;)
+if string12sg ~= nil then
+string12sg:remove()
+end
+--
+local string11 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11 ~= nil then
+string11.Position = string11.Position - UDim2.new(0,0,0,20)
+string11.Name = &quot;string12&quot;
+end
+local string11sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string11&quot;)
+if string11sg ~= nil then
+string11sg.Position = string11sg.Position - UDim2.new(0,0,0,20)
+string11sg.Name = &quot;string12&quot;
+end
+local string10 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10 ~= nil then
+string10.Position = string10.Position - UDim2.new(0,0,0,20)
+string10.Name = &quot;string11&quot;
+end
+local string10sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string10&quot;)
+if string10sg ~= nil then
+string10sg.Position = string10sg.Position - UDim2.new(0,0,0,20)
+string10sg.Name = &quot;string11&quot;
+end
+local string9 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9 ~= nil then
+string9.Position = string9.Position - UDim2.new(0,0,0,20)
+string9.Name = &quot;string10&quot;
+end
+local string9sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string9&quot;)
+if string9sg ~= nil then
+string9sg.Position = string9sg.Position - UDim2.new(0,0,0,20)
+string9sg.Name = &quot;string10&quot;
+end
+local string8 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8 ~= nil then
+string8.Position = string8.Position - UDim2.new(0,0,0,20)
+string8.Name = &quot;string9&quot;
+end
+local string8sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string8&quot;)
+if string8sg ~= nil then
+string8sg.Position = string8sg.Position - UDim2.new(0,0,0,20)
+string8sg.Name = &quot;string9&quot;
+end
+local string7 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7 ~= nil then
+string7.Position = string7.Position - UDim2.new(0,0,0,20)
+string7.Name = &quot;string8&quot;
+end
+local string7sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string7&quot;)
+if string7sg ~= nil then
+string7sg.Position = string7sg.Position - UDim2.new(0,0,0,20)
+string7sg.Name = &quot;string8&quot;
+end
+local string6 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6 ~= nil then
+string6.Position = string6.Position - UDim2.new(0,0,0,20)
+string6.Name = &quot;string7&quot;
+end
+local string6sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string6&quot;)
+if string6sg ~= nil then
+string6sg.Position = string6sg.Position - UDim2.new(0,0,0,20)
+string6sg.Name = &quot;string7&quot;
+end
+local string5 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5 ~= nil then
+string5.Position = string5.Position - UDim2.new(0,0,0,20)
+string5.Name = &quot;string6&quot;
+end
+local string5sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string5&quot;)
+if string5sg ~= nil then
+string5sg.Position = string5sg.Position - UDim2.new(0,0,0,20)
+string5sg.Name = &quot;string6&quot;
+end
+local string4 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4 ~= nil then
+string4.Position = string4.Position - UDim2.new(0,0,0,20)
+string4.Name = &quot;string5&quot;
+end
+local string4sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string4&quot;)
+if string4sg ~= nil then
+string4sg.Position = string4sg.Position - UDim2.new(0,0,0,20)
+string4sg.Name = &quot;string5&quot;
+end
+local string3 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3 ~= nil then
+string3.Position = string3.Position - UDim2.new(0,0,0,20)
+string3.Name = &quot;string4&quot;
+end
+local string3sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string3&quot;)
+if string3sg ~= nil then
+string3sg.Position = string3sg.Position - UDim2.new(0,0,0,20)
+string3sg.Name = &quot;string4&quot;
+end
+local string2 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2 ~= nil then
+string2.Position = string2.Position - UDim2.new(0,0,0,20)
+string2.Name = &quot;string3&quot;
+end
+local string2sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string2&quot;)
+if string2sg ~= nil then
+string2sg.Position = string2sg.Position - UDim2.new(0,0,0,20)
+string2sg.Name = &quot;string3&quot;
+end
+local string1 = v.PlayerGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1 ~= nil then
+string1.Position = string1.Position - UDim2.new(0,0,0,20)
+string1.Name = &quot;string2&quot;
+end
+local string1sg = game.StarterGui.Chat.Frame:findFirstChild(&quot;string1&quot;)
+if string1sg ~= nil then
+string1sg.Position = string1sg.Position - UDim2.new(0,0,0,20)
+string1sg.Name = &quot;string2&quot;
+end
+--
+local newstring = v.PlayerGui.Chat.Frame.templatestring:clone()
+newstring.Name = &quot;string1&quot;
+newstring.Parent = v.PlayerGui.Chat.Frame
+newstring.Position = UDim2.new(0,20,0,550)
+newstring.Visible = true
+newstring.overlay.TextColor3 = msgColor
+newstring.text.TextColor3 = txtColor
+if _G.showicons == true then
+newstring.text.icon.Visible = true
+newstring.text.icon.Image = _G.svricon
+else
+newstring.text.icon.Visible = false
+end
+plrK = script.Parent.Parent.Parent.PostInfo.Info.Value
+newstring.overlay.Text = &quot;[Info] &quot;--..(plrK)
+newstring.text.Text = &quot;[Info] &quot;..(plrK)
+newstring.shadow.Text = &quot;[Info] &quot;..(plrK)
+
+local newstringsg = game.StarterGui.Chat.Frame.templatestring:clone()
+newstringsg.Name = &quot;string1&quot;
+newstringsg.Parent = game.StarterGui.Chat.Frame
+newstringsg.Position = UDim2.new(0,20,0,550)
+newstringsg.Visible = true
+newstringsg.overlay.TextColor3 = msgColor
+newstringsg.text.TextColor3 = txtColor
+if _G.showicons == true then
+newstringsg.text.icon.Visible = true
+newstringsg.text.icon.Image = _G.svricon
+else
+newstringsg.text.icon.Visible = false
+end
+newstringsg.overlay.Text = &quot;[Info] &quot;--..(plrK)
+newstringsg.text.Text = &quot;[Info] &quot;..(plrK)
+newstringsg.shadow.Text = &quot;[Info] &quot;..(plrK)
+end
+end
+wait(5)
+repeat 
+&#9;wait(0.2)
+until script.Parent.Parent.Parent.PostInfo.Value == true
+wait(0.1)
+plrK = script.Parent.Parent.Parent.PostInfo.Info.Value
+script.Parent.Parent.Parent.PostInfo.Value = false
+end</ProtectedString>
+					</Properties>
+					<Item class="IntValue" referent="RBX11">
+						<Properties>
+							<string name="Name">currentmsg</string>
+							<int name="Value">1</int>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Script" referent="RBX12">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">WaterCheck</string>
+						<ProtectedString name="Source">--[[
+&#9;
+&#9;*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+ &#9;&#9;DO NOT ATTEMPT TO MODIFY THE BELOW,
+&#9;&#9;IT WILL CAUSE A FATAL ERROR!
+&#9;*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+&#9;
+--]]
+print &apos;YuguScript WaterMark Loaded!&apos;
+wait(5)
+x=4
+function postInfoGlobal(msg)
+&#9;local IV = script.Parent.Parent.Parent.PostInfo
+&#9;IV.Value = true
+&#9;IV.Info.Value = msg
+&#9;wait (1)
+&#9;if IV.Value == true then
+&#9;&#9;IV.Value = false
+&#9;end
+end
+function prWTMRK()
+&#9;local formA = string.gsub(script.Cr.Value,(&quot;&gt;&gt;DONTCHANGE&quot;),(&quot;Yogi Tomasch&quot;))
+&#9;postInfoGlobal(_G.WTMRK..(_G.CRCTXT):format(formA))
+end
+function loopT()
+&#9;while true do
+&#9;&#9;wait(_G.waittime*x)
+&#9;&#9;prWTMRK()
+&#9;end
+end
+loopT()</ProtectedString>
+					</Properties>
+					<Item class="StringValue" referent="RBX13">
+						<Properties>
+							<string name="Name">Cr</string>
+							<string name="Value">&gt;&gt;DONTCHANGE</string>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="Model" referent="RBX14">
+				<Properties>
+					<CoordinateFrame name="ModelInPrimary">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<string name="Name">Ranks</string>
+					<Ref name="PrimaryPart">null</Ref>
+				</Properties>
+				<Item class="Model" referent="RBX15">
+					<Properties>
+						<CoordinateFrame name="ModelInPrimary">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<string name="Name">Admins</string>
+						<Ref name="PrimaryPart">null</Ref>
+					</Properties>
+					<Item class="StringValue" referent="RBX16">
+						<Properties>
+							<string name="Name">bmw9868</string>
+							<string name="Value"></string>
+						</Properties>
+					</Item>
+					<Item class="StringValue" referent="RBX17">
+						<Properties>
+							<string name="Name">Censor35</string>
+							<string name="Value"></string>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="Model" referent="RBX18">
+					<Properties>
+						<CoordinateFrame name="ModelInPrimary">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<string name="Name">Owner</string>
+						<Ref name="PrimaryPart">null</Ref>
+					</Properties>
+					<Item class="StringValue" referent="RBX19">
+						<Properties>
+							<string name="Name">ImmaBeastX</string>
+							<string name="Value"></string>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="Model" referent="RBX20">
+				<Properties>
+					<CoordinateFrame name="ModelInPrimary">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<string name="Name">Oplayers</string>
+					<Ref name="PrimaryPart">null</Ref>
+				</Properties>
+				<Item class="Model" referent="RBX21">
+					<Properties>
+						<CoordinateFrame name="ModelInPrimary">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<string name="Name">OA</string>
+						<Ref name="PrimaryPart">null</Ref>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Model" referent="RBX22">
+				<Properties>
+					<CoordinateFrame name="ModelInPrimary">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<string name="Name">Log</string>
+					<Ref name="PrimaryPart">null</Ref>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="StringValue" referent="RBX23">
+			<Properties>
+				<string name="Name">CMDexe</string>
+				<string name="Value">null~</string>
+			</Properties>
+			<Item class="StringValue" referent="RBX24">
+				<Properties>
+					<string name="Name">WasBlocked</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="BoolValue" referent="RBX25">
+			<Properties>
+				<string name="Name">PlayerEnteredX</string>
+				<bool name="Value">false</bool>
+			</Properties>
+			<Item class="StringValue" referent="RBX26">
+				<Properties>
+					<string name="Name">NameR</string>
+					<string name="Value">~null</string>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="BoolValue" referent="RBX27">
+			<Properties>
+				<string name="Name">PlayerKicked</string>
+				<bool name="Value">false</bool>
+			</Properties>
+			<Item class="StringValue" referent="RBX28">
+				<Properties>
+					<string name="Name">NameR</string>
+					<string name="Value">null~</string>
+				</Properties>
+			</Item>
+			<Item class="StringValue" referent="RBX29">
+				<Properties>
+					<string name="Name">Res</string>
+					<string name="Value">null~</string>
+				</Properties>
+			</Item>
+			<Item class="StringValue" referent="RBX30">
+				<Properties>
+					<string name="Name">Type</string>
+					<string name="Value">~null</string>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Model" referent="RBX31">
+			<Properties>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<string name="Name">Variables</string>
+				<Ref name="PrimaryPart">null</Ref>
+			</Properties>
+			<Item class="StringValue" referent="RBX32">
+				<Properties>
+					<string name="Name">Alias</string>
+					<string name="Value">All Alias Props Go Here!</string>
+				</Properties>
+				<Item class="StringValue" referent="RBX33">
+					<Properties>
+						<string name="Name">ImmaBeastX</string>
+						<string name="Value">~null</string>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="BoolValue" referent="RBX34">
+			<Properties>
+				<string name="Name">AnnounceV</string>
+				<bool name="Value">false</bool>
+			</Properties>
+			<Item class="StringValue" referent="RBX35">
+				<Properties>
+					<string name="Name">TextV</string>
+					<string name="Value">No Message Was Provided</string>
+				</Properties>
+			</Item>
+			<Item class="Color3Value" referent="RBX36">
+				<Properties>
+					<string name="Name">Color</string>
+					<Color3 name="Value">4294220545</Color3>
+				</Properties>
+			</Item>
+			<Item class="BoolValue" referent="RBX37">
+				<Properties>
+					<string name="Name">Info</string>
+					<bool name="Value">false</bool>
+				</Properties>
+			</Item>
+			<Item class="Color3Value" referent="RBX38">
+				<Properties>
+					<string name="Name">InfoColor</string>
+					<Color3 name="Value">4293394435</Color3>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="StringValue" referent="RBX39">
+			<Properties>
+				<string name="Name">Shout</string>
+				<string name="Value">~</string>
+			</Properties>
+		</Item>
+		<Item class="Configuration" referent="RBX40">
+			<Properties>
+				<string name="Name">ItemHold</string>
+			</Properties>
+			<Item class="StringValue" referent="RBX41">
+				<Properties>
+					<string name="Name">IsAdmin</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+			<Item class="StringValue" referent="RBX42">
+				<Properties>
+					<string name="Name">IsBlocked</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+			<Item class="StringValue" referent="RBX43">
+				<Properties>
+					<string name="Name">IsOwner</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+			<Item class="ScreenGui" referent="RBX44">
+				<Properties>
+					<string name="Name">Chat</string>
+				</Properties>
+				<Item class="Frame" referent="RBX45">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Color3 name="BackgroundColor3">4278190080</Color3>
+						<float name="BackgroundTransparency">1</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<string name="Name">Frame</string>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>10</XO>
+							<YS>0</YS>
+							<YO>10</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>500</XO>
+							<YS>0</YS>
+							<YO>15</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<token name="Style">0</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+					<Item class="TextLabel" referent="RBX46">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4286611584</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">2</token>
+							<token name="FontSize">5</token>
+							<string name="Name">chathistory</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>0</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>500</XO>
+								<YS>0</YS>
+								<YO>15</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Chat History:</string>
+							<Color3 name="TextColor3">4294967295</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">0</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">0</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">false</bool>
+							<int name="ZIndex">2</int>
+						</Properties>
+					</Item>
+					<Item class="TextLabel" referent="RBX47">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4288716960</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">0</token>
+							<string name="Name">templatestring</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>20</XO>
+								<YS>25</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>480</XO>
+								<YS>0</YS>
+								<YO>15</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text"></string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">false</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+						<Item class="TextLabel" referent="RBX48">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4278190080</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">0</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">0</token>
+								<token name="FontSize">4</token>
+								<string name="Name">overlay</string>
+								<UDim2 name="Position">
+									<XS>0</XS>
+									<XO>0</XO>
+									<YS>0</YS>
+									<YO>0</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>480</XO>
+									<YS>0</YS>
+									<YO>15</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">Player1:</string>
+								<Color3 name="TextColor3">4294901764</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4278190080</Color3>
+								<float name="TextStrokeTransparency">1</float>
+								<float name="TextTransparency">0</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">0</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">true</bool>
+								<int name="ZIndex">3</int>
+							</Properties>
+						</Item>
+						<Item class="TextLabel" referent="RBX49">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4278190080</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">0</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">2</token>
+								<token name="FontSize">4</token>
+								<string name="Name">shadow</string>
+								<UDim2 name="Position">
+									<XS>0</XS>
+									<XO>2</XO>
+									<YS>0</YS>
+									<YO>3</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>480</XO>
+									<YS>0</YS>
+									<YO>15</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">Player1:</string>
+								<Color3 name="TextColor3">4278190080</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4278190080</Color3>
+								<float name="TextStrokeTransparency">1</float>
+								<float name="TextTransparency">1</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">0</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">false</bool>
+								<int name="ZIndex">1</int>
+							</Properties>
+						</Item>
+						<Item class="TextLabel" referent="RBX50">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4278190080</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">0</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">0</token>
+								<token name="FontSize">4</token>
+								<string name="Name">text</string>
+								<UDim2 name="Position">
+									<XS>0</XS>
+									<XO>0</XO>
+									<YS>0</YS>
+									<YO>0</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>480</XO>
+									<YS>0</YS>
+									<YO>15</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">Player1:</string>
+								<Color3 name="TextColor3">4294967295</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4294967295</Color3>
+								<float name="TextStrokeTransparency">1</float>
+								<float name="TextTransparency">0</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">0</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">true</bool>
+								<int name="ZIndex">2</int>
+							</Properties>
+							<Item class="ImageLabel" referent="RBX51">
+								<Properties>
+									<bool name="Active">false</bool>
+									<Color3 name="BackgroundColor3">4294924633</Color3>
+									<float name="BackgroundTransparency">1</float>
+									<Color3 name="BorderColor3">4279970357</Color3>
+									<int name="BorderSizePixel">0</int>
+									<bool name="ClipsDescendants">false</bool>
+									<bool name="Draggable">false</bool>
+									<Content name="Image"><url>http://www.roblox.com/asset/?id=127188015</url></Content>
+									<Vector2 name="ImageRectOffset">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<Vector2 name="ImageRectSize">
+										<X>0</X>
+										<Y>0</Y>
+									</Vector2>
+									<string name="Name">icon</string>
+									<UDim2 name="Position">
+										<XS>0</XS>
+										<XO>-20</XO>
+										<YS>0</YS>
+										<YO>0</YO>
+									</UDim2>
+									<float name="Rotation">0</float>
+									<UDim2 name="Size">
+										<XS>0</XS>
+										<XO>16</XO>
+										<YS>0</YS>
+										<YO>16</YO>
+									</UDim2>
+									<token name="SizeConstraint">0</token>
+									<bool name="Visible">false</bool>
+									<int name="ZIndex">1</int>
+								</Properties>
+							</Item>
+						</Item>
+					</Item>
+					<Item class="TextLabel" referent="RBX52">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4286611584</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">2</token>
+							<token name="FontSize">5</token>
+							<string name="Name">chathistoryshadow</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>2</XO>
+								<YS>0</YS>
+								<YO>3</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>500</XO>
+								<YS>0</YS>
+								<YO>15</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Chat History:</string>
+							<Color3 name="TextColor3">4278190080</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">0</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">false</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="ScreenGui" referent="RBX53">
+				<Properties>
+					<string name="Name">OnKickGui</string>
+				</Properties>
+				<Item class="Frame" referent="RBX54">
+					<Properties>
+						<bool name="Active">false</bool>
+						<Color3 name="BackgroundColor3">4294967295</Color3>
+						<float name="BackgroundTransparency">0.200000003</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<string name="Name">Frame</string>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>1</XS>
+							<XO>0</XO>
+							<YS>1</YS>
+							<YO>0</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<token name="Style">0</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+					<Item class="TextLabel" referent="RBX55">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">1</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">2</token>
+							<token name="FontSize">9</token>
+							<string name="Name">MsgT</string>
+							<UDim2 name="Position">
+								<XS>0.5</XS>
+								<XO>-50</XO>
+								<YS>0.5</YS>
+								<YO>-50</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>100</XO>
+								<YS>0</YS>
+								<YO>100</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">YOU WERE KICKED!</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+						<Item class="TextLabel" referent="RBX56">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4294967295</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">1</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">1</token>
+								<token name="FontSize">9</token>
+								<string name="Name">MsgT_Shadow</string>
+								<UDim2 name="Position">
+									<XS>0.5</XS>
+									<XO>-50</XO>
+									<YS>0.5</YS>
+									<YO>-50</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>100</XO>
+									<YS>0</YS>
+									<YO>100</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">YOU WERE KICKED!</string>
+								<Color3 name="TextColor3">4292149251</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4278190080</Color3>
+								<float name="TextStrokeTransparency">0</float>
+								<float name="TextTransparency">0.5</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">2</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">true</bool>
+								<int name="ZIndex">1</int>
+							</Properties>
+						</Item>
+					</Item>
+					<Item class="TextLabel" referent="RBX57">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">1</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">3</token>
+							<token name="FontSize">8</token>
+							<string name="Name">ResT</string>
+							<UDim2 name="Position">
+								<XS>0.5</XS>
+								<XO>-50</XO>
+								<YS>0.699999988</YS>
+								<YO>-50</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>100</XO>
+								<YS>0</YS>
+								<YO>100</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">No Reason Was Provided!</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="ScreenGui" referent="RBX58">
+				<Properties>
+					<string name="Name">CBI</string>
+				</Properties>
+				<Item class="Frame" referent="RBX59">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Color3 name="BackgroundColor3">4278190080</Color3>
+						<float name="BackgroundTransparency">1</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<string name="Name">Frame</string>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>10</XO>
+							<YS>0</YS>
+							<YO>10</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>500</XO>
+							<YS>0</YS>
+							<YO>15</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<token name="Style">0</token>
+						<bool name="Visible">false</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+					<Item class="TextLabel" referent="RBX60">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Color3 name="BackgroundColor3">4288716960</Color3>
+							<float name="BackgroundTransparency">1</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">0</token>
+							<string name="Name">templateline</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>20</XO>
+								<YS>25</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>480</XO>
+								<YS>0</YS>
+								<YO>15</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text"></string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+						<Item class="TextLabel" referent="RBX61">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4278190080</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">0</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">0</token>
+								<token name="FontSize">4</token>
+								<string name="Name">overlay</string>
+								<UDim2 name="Position">
+									<XS>0</XS>
+									<XO>0</XO>
+									<YS>0</YS>
+									<YO>0</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>480</XO>
+									<YS>0</YS>
+									<YO>15</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">[Warning]</string>
+								<Color3 name="TextColor3">4294901764</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4278190080</Color3>
+								<float name="TextStrokeTransparency">1</float>
+								<float name="TextTransparency">0</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">0</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">true</bool>
+								<int name="ZIndex">3</int>
+							</Properties>
+						</Item>
+						<Item class="TextLabel" referent="RBX62">
+							<Properties>
+								<bool name="Active">false</bool>
+								<Color3 name="BackgroundColor3">4278190080</Color3>
+								<float name="BackgroundTransparency">1</float>
+								<Color3 name="BorderColor3">4279970357</Color3>
+								<int name="BorderSizePixel">0</int>
+								<bool name="ClipsDescendants">false</bool>
+								<bool name="Draggable">false</bool>
+								<token name="Font">0</token>
+								<token name="FontSize">4</token>
+								<string name="Name">text</string>
+								<UDim2 name="Position">
+									<XS>0</XS>
+									<XO>0</XO>
+									<YS>0</YS>
+									<YO>0</YO>
+								</UDim2>
+								<float name="Rotation">0</float>
+								<UDim2 name="Size">
+									<XS>0</XS>
+									<XO>480</XO>
+									<YS>0</YS>
+									<YO>15</YO>
+								</UDim2>
+								<token name="SizeConstraint">0</token>
+								<string name="Text">[Warning]: Your Chat Is Blocked!</string>
+								<Color3 name="TextColor3">4294967295</Color3>
+								<bool name="TextScaled">false</bool>
+								<Color3 name="TextStrokeColor3">4294967295</Color3>
+								<float name="TextStrokeTransparency">1</float>
+								<float name="TextTransparency">0</float>
+								<bool name="TextWrapped">false</bool>
+								<token name="TextXAlignment">0</token>
+								<token name="TextYAlignment">1</token>
+								<bool name="Visible">true</bool>
+								<int name="ZIndex">2</int>
+							</Properties>
+						</Item>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="Tool" referent="RBX63">
+				<Properties>
+					<bool name="CanBeDropped">false</bool>
+					<bool name="Enabled">false</bool>
+					<CoordinateFrame name="Grip">
+						<X>-0.329237193</X>
+						<Y>-0.576264262</Y>
+						<Z>0.157275885</Z>
+						<R00>-0.29237175</R00>
+						<R01>0</R01>
+						<R02>-0.956304729</R02>
+						<R10>0.0999610648</R10>
+						<R11>0.994521916</R11>
+						<R12>-0.0305611696</R12>
+						<R20>0.951066017</R20>
+						<R21>-0.104528464</R21>
+						<R22>-0.290770113</R22>
+					</CoordinateFrame>
+					<string name="Name">NukeTool</string>
+					<Content name="TextureId"><url>http://www.roblox.com/asset/?id=88743128</url></Content>
+					<string name="ToolTip">Call in an airstrike on a designated location.</string>
+				</Properties>
+				<Item class="Part" referent="RBX64">
+					<Properties>
+						<bool name="Anchored">true</bool>
+						<float name="BackParamA">-0.5</float>
+						<float name="BackParamB">0.5</float>
+						<token name="BackSurface">0</token>
+						<token name="BackSurfaceInput">0</token>
+						<float name="BottomParamA">-0.5</float>
+						<float name="BottomParamB">0.5</float>
+						<token name="BottomSurface">4</token>
+						<token name="BottomSurfaceInput">0</token>
+						<int name="BrickColor">194</int>
+						<CoordinateFrame name="CFrame">
+							<X>0</X>
+							<Y>-142.400009</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<bool name="CanCollide">true</bool>
+						<float name="Elasticity">0.5</float>
+						<float name="Friction">0.300000012</float>
+						<float name="FrontParamA">-0.5</float>
+						<float name="FrontParamB">0.5</float>
+						<token name="FrontSurface">0</token>
+						<token name="FrontSurfaceInput">0</token>
+						<float name="LeftParamA">-0.5</float>
+						<float name="LeftParamB">0.5</float>
+						<token name="LeftSurface">0</token>
+						<token name="LeftSurfaceInput">0</token>
+						<bool name="Locked">false</bool>
+						<token name="Material">256</token>
+						<string name="Name">Handle</string>
+						<float name="Reflectance">0.349999994</float>
+						<float name="RightParamA">-0.5</float>
+						<float name="RightParamB">0.5</float>
+						<token name="RightSurface">0</token>
+						<token name="RightSurfaceInput">0</token>
+						<Vector3 name="RotVelocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<float name="TopParamA">-0.5</float>
+						<float name="TopParamB">0.5</float>
+						<token name="TopSurface">3</token>
+						<token name="TopSurfaceInput">0</token>
+						<float name="Transparency">1</float>
+						<Vector3 name="Velocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<token name="formFactorRaw">3</token>
+						<token name="shape">1</token>
+						<Vector3 name="size">
+							<X>0.800000012</X>
+							<Y>2.29999995</Y>
+							<Z>0.400000006</Z>
+						</Vector3>
+					</Properties>
+					<Item class="Sound" referent="RBX65">
+						<Properties>
+							<bool name="Looped">false</bool>
+							<string name="Name">Sound</string>
+							<float name="Pitch">1</float>
+							<bool name="PlayOnRemove">false</bool>
+							<Content name="SoundId"><url>http://www.roblox.com/asset/?id=88858815</url></Content>
+							<float name="Volume">1</float>
+						</Properties>
+					</Item>
+					<Item class="SpecialMesh" referent="RBX66">
+						<Properties>
+							<token name="LODX">2</token>
+							<token name="LODY">2</token>
+							<Content name="MeshId"><url>http://www.roblox.com/asset/?id=88742707</url></Content>
+							<token name="MeshType">5</token>
+							<string name="Name">Mesh</string>
+							<Vector3 name="Offset">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<Vector3 name="Scale">
+								<X>1</X>
+								<Y>1</Y>
+								<Z>1</Z>
+							</Vector3>
+							<Content name="TextureId"><url>http://www.roblox.com/asset/?id=88742969</url></Content>
+							<Vector3 name="VertexColor">
+								<X>1</X>
+								<Y>1</Y>
+								<Z>1</Z>
+							</Vector3>
+						</Properties>
+					</Item>
+				</Item>
+				<Item class="LocalScript" referent="RBX67">
+					<Properties>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">LocalScript</string>
+						<ProtectedString name="Source">--Made by Stickmasterluke
+
+
+sp=script.Parent
+
+
+cooldown=20
+jetheight=200
+jetdistance=2000
+jetspeed=300
+
+
+debris=game:GetService(&quot;Debris&quot;)
+location=Vector3.new(0,0,0)
+check=true
+marked=false
+
+talkinggrip=CFrame.new(0.121005774, -1.07626426, 1.151003, -0.571957648, 0.032301072, -0.819646955, 0.0999610648, 0.994521916, -0.0305611696, 0.814169705, -0.0994124785, -0.572053254)
+holdinggrip=CFrame.new(-0.329237193, -0.576264262, 0.157275885, -0.29237175, 0, -0.956304729, 0.0999610648, 0.994521916, -0.0305611696, 0.951066017, -0.104528464, -0.290770113)
+
+function waitfor(parent,name)
+&#9;while parent:FindFirstChild(name)==nil do
+&#9;&#9;wait()
+&#9;end
+&#9;return parent:FindFirstChild(name)
+end
+
+laststrike=waitfor(sp,&quot;LastStrike&quot;)
+
+function onEquipped(mouse)
+&#9;equipped=true
+&#9;local plr=game.Players.LocalPlayer
+&#9;sp.Grip=holdinggrip
+&#9;if mouse~=nil and plr~=nil then
+&#9;&#9;if tick()-cooldown&lt;laststrike.Value then
+&#9;&#9;&#9;mouse.Icon=&quot;rbxasset://textures\\GunWaitCursor.png&quot;
+&#9;&#9;&#9;wait(laststrike.Value-(tick()-cooldown))
+&#9;&#9;&#9;mouse.Icon=&quot;rbxasset://textures\\GunCursor.png&quot;
+&#9;&#9;else
+&#9;&#9;&#9;mouse.Icon=&quot;rbxasset://textures\\GunCursor.png&quot;
+&#9;&#9;end
+&#9;&#9;mouse.Button1Down:connect(function()
+&#9;&#9;&#9;if tick()-cooldown&gt;laststrike.Value and mouse.Target and mouse.Target~=nil and mouse.Hit then
+&#9;&#9;&#9;&#9;location=mouse.Hit.p
+&#9;&#9;&#9;&#9;local chr=sp.Parent
+&#9;&#9;&#9;&#9;if chr and check then
+&#9;&#9;&#9;&#9;&#9;local t=chr:FindFirstChild(&quot;Torso&quot;)
+&#9;&#9;&#9;&#9;&#9;local h=chr:FindFirstChild(&quot;Humanoid&quot;)
+&#9;&#9;&#9;&#9;&#9;if t and h and h.Health&gt;0 then
+&#9;&#9;&#9;&#9;&#9;&#9;check=false
+&#9;&#9;&#9;&#9;&#9;&#9;laststrike.Value=tick()
+&#9;&#9;&#9;&#9;&#9;&#9;mouse.Icon=&quot;rbxasset://textures\\GunWaitCursor.png&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;sp.Grip=talkinggrip
+&#9;&#9;&#9;&#9;&#9;&#9;local sound=sp.Handle:FindFirstChild(&quot;Sound&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;if sound~=nil then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;sound:Play()
+&#9;&#9;&#9;&#9;&#9;&#9;end
+
+&#9;&#9;&#9;&#9;&#9;&#9;local tp=Instance.new(&quot;Part&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;tp.Transparency=.5
+&#9;&#9;&#9;&#9;&#9;&#9;tp.Name=&quot;Effect&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;tp.Anchored=true
+&#9;&#9;&#9;&#9;&#9;&#9;tp.CanCollide=false
+&#9;&#9;&#9;&#9;&#9;&#9;tp.Size=Vector3.new(0,0,0)
+&#9;&#9;&#9;&#9;&#9;&#9;tp.BrickColor=BrickColor.new(&quot;Lime green&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;tp.CFrame=CFrame.new(location)*CFrame.Angles(math.pi/2,0,0)
+&#9;&#9;&#9;&#9;&#9;&#9;local me=Instance.new(&quot;SpecialMesh&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;me.MeshId=&quot;http://www.roblox.com/asset/?id=3270017&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;me.Scale=Vector3.new(40,40,1)
+&#9;&#9;&#9;&#9;&#9;&#9;me.Parent=tp
+&#9;&#9;&#9;&#9;&#9;&#9;debris:AddItem(tp,5)
+&#9;&#9;&#9;&#9;&#9;&#9;tp.Parent=game.Workspace
+&#9;&#9;&#9;&#9;&#9;&#9;delay(0,function()
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;while tp and tp.Transparency&lt;1 do
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;tp.Transparency=tp.Transparency+.025
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;wait(.15)
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;if tp then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;tp:remove()
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;end)
+
+&#9;&#9;&#9;&#9;&#9;&#9;local m=Instance.new(&quot;Model&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;m.Name=&quot;F22 Bombing Jet&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;local p=Instance.new(&quot;Part&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;p.Locked=true
+&#9;&#9;&#9;&#9;&#9;&#9;p.Name=&quot;Torso&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;p.Transparency=0
+&#9;&#9;&#9;&#9;&#9;&#9;p.CanCollide=true
+&#9;&#9;&#9;&#9;&#9;&#9;p.TopSurface=&quot;Smooth&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;p.BottomSurface=&quot;Smooth&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;p.formFactor=&quot;Custom&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;p.Size=Vector3.new(20,5,20)
+&#9;&#9;&#9;&#9;&#9;&#9;p.CFrame=CFrame.new(location+Vector3.new(0,jetheight,0))*CFrame.Angles(0,math.pi*2*math.random(),0)*CFrame.new(0,0,jetdistance)
+&#9;&#9;&#9;&#9;&#9;&#9;p.Parent=m
+
+&#9;&#9;&#9;&#9;&#9;&#9;local mesh=Instance.new(&quot;SpecialMesh&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;mesh.MeshId=&quot;http://www.roblox.com/asset/?id=88775328&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;mesh.TextureId=&quot;http://www.roblox.com/asset/?id=88775716&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;mesh.Scale=Vector3.new(10,10,10)
+&#9;&#9;&#9;&#9;&#9;&#9;mesh.Parent=p
+
+&#9;&#9;&#9;&#9;&#9;&#9;local smoke=Instance.new(&quot;Smoke&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;smoke.RiseVelocity=20
+&#9;&#9;&#9;&#9;&#9;&#9;smoke.Parent=p
+
+&#9;&#9;&#9;&#9;&#9;&#9;local he=Instance.new(&quot;Part&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;he.Locked=true
+&#9;&#9;&#9;&#9;&#9;&#9;he.Name=&quot;Head&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;he.formFactor=&quot;Custom&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;he.Transparency=1
+&#9;&#9;&#9;&#9;&#9;&#9;he.Size=Vector3.new(0,0,0)
+&#9;&#9;&#9;&#9;&#9;&#9;he.Parent=m
+
+&#9;&#9;&#9;&#9;&#9;&#9;local bf=Instance.new(&quot;BodyForce&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;bf.force=Vector3.new(0,(p:GetMass()+he:GetMass())*196.2,0)
+&#9;&#9;&#9;&#9;&#9;&#9;bf.Parent=p
+
+&#9;&#9;&#9;&#9;&#9;&#9;local w=Instance.new(&quot;Weld&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;w.Name=&quot;Neck&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;w.Part0=p
+&#9;&#9;&#9;&#9;&#9;&#9;w.Part1=he
+&#9;&#9;&#9;&#9;&#9;&#9;w.Parent=p
+
+&#9;&#9;&#9;&#9;&#9;&#9;local h=Instance.new(&quot;Humanoid&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;h.MaxHealth=5
+&#9;&#9;&#9;&#9;&#9;&#9;h.Health=5
+&#9;&#9;&#9;&#9;&#9;&#9;h.WalkSpeed=0
+&#9;&#9;&#9;&#9;&#9;&#9;h.Sit=true
+&#9;&#9;&#9;&#9;&#9;&#9;h.Parent=m
+
+&#9;&#9;&#9;&#9;&#9;&#9;local tl=Instance.new(&quot;Vector3Value&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;tl.Name=&quot;TargetLocation&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;tl.Value=location
+&#9;&#9;&#9;&#9;&#9;&#9;tl.Parent=m
+
+&#9;&#9;&#9;&#9;&#9;&#9;local ct=Instance.new(&quot;ObjectValue&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;ct.Value=game.Players.LocalPlayer
+&#9;&#9;&#9;&#9;&#9;&#9;ct.Name=&quot;creator&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;ct.Parent=m
+
+&#9;&#9;&#9;&#9;&#9;&#9;local s=script.Script:clone()
+&#9;&#9;&#9;&#9;&#9;&#9;s.Parent=m
+&#9;&#9;&#9;&#9;&#9;&#9;s.Disabled=false
+
+&#9;&#9;&#9;&#9;&#9;&#9;local vel=((location+Vector3.new(0,jetheight,0))-p.Position).unit*jetspeed
+&#9;&#9;&#9;&#9;&#9;&#9;p.Velocity=vel
+&#9;&#9;&#9;&#9;&#9;&#9;he.Velocity=vel
+
+&#9;&#9;&#9;&#9;&#9;&#9;debris:AddItem(m,20)
+&#9;&#9;&#9;&#9;&#9;&#9;m.Parent=game.Workspace
+
+&#9;&#9;&#9;&#9;&#9;&#9;wait(5)
+&#9;&#9;&#9;&#9;&#9;&#9;local sound=sp.Handle:FindFirstChild(&quot;Sound&quot;)
+&#9;&#9;&#9;&#9;&#9;&#9;if sound~=nil then
+&#9;&#9;&#9;&#9;&#9;&#9;&#9;sound:Stop()
+&#9;&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;&#9;sp.Grip=holdinggrip
+&#9;&#9;&#9;&#9;&#9;&#9;wait(cooldown-5)
+&#9;&#9;&#9;&#9;&#9;&#9;mouse.Icon=&quot;rbxasset://textures\\GunCursor.png&quot;
+&#9;&#9;&#9;&#9;&#9;&#9;check=true
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end
+&#9;&#9;end)
+&#9;end
+end
+
+function onUnequipped()
+&#9;equipped=false
+end
+
+sp.Equipped:connect(onEquipped)
+sp.Unequipped:connect(onUnequipped)
+
+
+</ProtectedString>
+					</Properties>
+					<Item class="Script" referent="RBX68">
+						<Properties>
+							<bool name="Disabled">true</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">Script</string>
+							<ProtectedString name="Source">--Made by Stickmasterluke
+
+
+sp=script.Parent
+
+
+jetheight=150
+
+bombs=3
+droprange=450
+
+
+alive=true
+debris=game:GetService(&quot;Debris&quot;)
+
+function waitfor(a,b)
+&#9;while a:FindFirstChild(b)==nil do
+&#9;&#9;wait()
+&#9;end
+&#9;return a:FindFirstChild(b)
+end
+
+head=waitfor(sp,&quot;Head&quot;)
+hum=waitfor(sp,&quot;Humanoid&quot;)
+torso=waitfor(sp,&quot;Torso&quot;)
+ct=waitfor(sp,&quot;creator&quot;)
+tl=waitfor(sp,&quot;TargetLocation&quot;)
+
+torso.Touched:connect(function(hit)
+&#9;if hit and hit.Parent and hit.Parent~=sp and hit.Name~=&quot;Effect&quot; then
+&#9;&#9;if hum then
+&#9;&#9;&#9;hum.Health=0
+&#9;&#9;end
+&#9;end
+end)
+
+delay(0,function()
+&#9;local jsound=Instance.new(&quot;Sound&quot;)
+&#9;jsound.Name=&quot;JetScream&quot;
+&#9;jsound.SoundId=&quot;http://www.roblox.com/asset/?id=88862455&quot;
+&#9;jsound.Volume=.6
+&#9;debris:AddItem(jsound,10)
+&#9;jsound.Parent=game.Workspace
+&#9;wait(2)
+&#9;jsound:Play()
+end)
+
+hum.Changed:connect(function(prop)
+&#9;if alive then
+&#9;&#9;if hum then
+&#9;&#9;&#9;if hum.Health&lt;=0 then
+&#9;&#9;&#9;&#9;alive=false
+&#9;&#9;&#9;&#9;if torso then
+&#9;&#9;&#9;&#9;&#9;hum:remove()
+&#9;&#9;&#9;&#9;&#9;local e=Instance.new(&quot;Explosion&quot;)
+&#9;&#9;&#9;&#9;&#9;e.Position=torso.Position
+&#9;&#9;&#9;&#9;&#9;e.BlastPressure=0
+&#9;&#9;&#9;&#9;&#9;e.BlastRadius=15
+&#9;&#9;&#9;&#9;&#9;e.ExplosionType=2
+&#9;&#9;&#9;&#9;&#9;e.Parent=game.Workspace
+&#9;&#9;&#9;&#9;&#9;local f=Instance.new(&quot;Fire&quot;)
+&#9;&#9;&#9;&#9;&#9;f.Size=100
+&#9;&#9;&#9;&#9;&#9;f.Heat=100
+&#9;&#9;&#9;&#9;&#9;f.Parent=torso
+&#9;&#9;&#9;&#9;&#9;if head then
+&#9;&#9;&#9;&#9;&#9;&#9;head:remove()
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;torso.Velocity=torso.Velocity+Vector3.new((math.random()-.5)*50,(math.random()-.5)*50,(math.random()-.5)*50)
+&#9;&#9;&#9;&#9;&#9;wait(3)
+&#9;&#9;&#9;&#9;&#9;if torso then
+&#9;&#9;&#9;&#9;&#9;&#9;torso.Transparency=1
+&#9;&#9;&#9;&#9;&#9;&#9;torso.Velocity=torso.Velocity+Vector3.new((math.random()-.5)*50,(math.random()-.5)*50,(math.random()-.5)*50)
+&#9;&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;&#9;wait(3)
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;&#9;sp:remove()
+&#9;&#9;&#9;end
+&#9;&#9;else
+&#9;&#9;&#9;alive=false
+&#9;&#9;&#9;sp:remove()
+&#9;&#9;end
+&#9;end
+end)
+
+while alive do
+&#9;if torso and tl then
+&#9;&#9;if bombs&gt;0 then
+&#9;&#9;&#9;if (torso.Position-tl.Value).magnitude&lt;droprange then
+&#9;&#9;&#9;&#9;bombs=bombs-1
+&#9;&#9;&#9;&#9;local b=Instance.new(&quot;Part&quot;)
+&#9;&#9;&#9;&#9;b.Name=&quot;Effect&quot;
+&#9;&#9;&#9;&#9;b.formFactor=&quot;Custom&quot;
+&#9;&#9;&#9;&#9;b.Size=Vector3.new(3,3,10)*.5
+&#9;&#9;&#9;&#9;b.CanCollide=false
+&#9;&#9;&#9;&#9;b.CFrame=torso.CFrame
+&#9;&#9;&#9;&#9;b.Velocity=torso.Velocity
+&#9;&#9;&#9;&#9;ct:clone().Parent=b
+&#9;&#9;&#9;&#9;local s=script.Script:clone()
+&#9;&#9;&#9;&#9;s.Parent=b
+&#9;&#9;&#9;&#9;s.Disabled=false
+&#9;&#9;&#9;&#9;local so=Instance.new(&quot;Sound&quot;)
+&#9;&#9;&#9;&#9;so.SoundId=&quot;rbxasset://sounds/collide.wav&quot;
+&#9;&#9;&#9;&#9;so.Volume=1
+&#9;&#9;&#9;&#9;so.Pitch=.75
+&#9;&#9;&#9;&#9;so.Parent=b
+&#9;&#9;&#9;&#9;local mesh=Instance.new(&quot;SpecialMesh&quot;)
+&#9;&#9;&#9;&#9;mesh.MeshId=&quot;http://www.roblox.com/asset/?id=88782666&quot;
+&#9;&#9;&#9;&#9;mesh.TextureId=&quot;http://www.roblox.com/asset/?id=88782631&quot;
+&#9;&#9;&#9;&#9;mesh.Scale=Vector3.new(6,6,6)
+&#9;&#9;&#9;&#9;mesh.Parent=b
+&#9;&#9;&#9;&#9;debris:AddItem(b,10)
+&#9;&#9;&#9;&#9;b.Parent=game.Workspace
+&#9;&#9;&#9;end
+&#9;&#9;&#9;torso.Velocity=((tl.Value+Vector3.new(0,jetheight,0))-torso.Position).unit*torso.Velocity.magnitude
+&#9;&#9;else
+&#9;&#9;&#9;torso.Velocity=torso.Velocity+Vector3.new(0,10,0)
+&#9;&#9;end
+&#9;&#9;torso.CFrame=CFrame.new(torso.Position,torso.Position+torso.Velocity)
+&#9;end
+&#9;wait(.25)
+end
+
+
+</ProtectedString>
+						</Properties>
+						<Item class="Script" referent="RBX69">
+							<Properties>
+								<bool name="Disabled">true</bool>
+								<Content name="LinkedSource"><null></null></Content>
+								<string name="Name">Script</string>
+								<ProtectedString name="Source">--Stickmasterluke
+
+
+sp=script.Parent
+
+
+blastRadius=19
+blastPressure=2*10^6
+
+exploded=false
+
+
+function damaged(hit)
+&#9;local ct=sp:FindFirstChild(&quot;creator&quot;)
+&#9;if ct.Value~=nil and (hit.Name==&quot;Head&quot; or hit.Name==&quot;Torso&quot;) then
+&#9;&#9;local h=hit.Parent:FindFirstChild(&quot;Humanoid&quot;)
+&#9;&#9;if h~=nil then
+&#9;&#9;&#9;for i,v in ipairs(h:GetChildren()) do
+&#9;&#9;&#9;&#9;if v.Name==&quot;creator&quot; then
+&#9;&#9;&#9;&#9;&#9;v:remove()
+&#9;&#9;&#9;&#9;end
+&#9;&#9;&#9;end
+&#9;&#9;&#9;ct:clone().Parent=h
+&#9;&#9;end
+&#9;end
+end
+
+function explode()
+&#9;if not exploded then
+&#9;&#9;exploded=true
+&#9;&#9;sp.Anchored=true
+&#9;&#9;sp.Transparency=1
+&#9;&#9;local s=sp:FindFirstChild(&quot;Sound&quot;)
+&#9;&#9;if s~=nil then
+&#9;&#9;&#9;s:Play()
+&#9;&#9;end
+&#9;&#9;local e=Instance.new(&quot;Explosion&quot;)
+&#9;&#9;e.Position=sp.Position
+&#9;&#9;e.BlastPressure=blastPressure
+&#9;&#9;e.BlastRadius=blastRadius
+&#9;&#9;e.ExplosionType=2
+&#9;&#9;e.Hit:connect(damaged)
+&#9;&#9;e.Parent=game.Workspace
+&#9;&#9;wait(.5)
+&#9;&#9;if sp and sp~=nil and sp.Parent~=nil then
+&#9;&#9;&#9;sp:remove()
+&#9;&#9;end
+&#9;end
+end
+
+
+sp.Touched:connect(function(hit)
+&#9;if hit and hit.Parent then
+&#9;&#9;if hit.Name~=&quot;Effect&quot; and hit.Parent.Name~=&quot;F22 Bombing Jet&quot; then
+&#9;&#9;&#9;explode()
+&#9;&#9;end
+&#9;end
+end)
+
+
+
+
+
+
+</ProtectedString>
+							</Properties>
+						</Item>
+					</Item>
+				</Item>
+				<Item class="NumberValue" referent="RBX70">
+					<Properties>
+						<string name="Name">LastStrike</string>
+						<double name="Value">0</double>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ScreenGui" referent="RBX71">
+				<Properties>
+					<string name="Name">CLG</string>
+				</Properties>
+				<Item class="Frame" referent="RBX72">
+					<Properties>
+						<bool name="Active">false</bool>
+						<Color3 name="BackgroundColor3">4294967295</Color3>
+						<float name="BackgroundTransparency">1</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">0</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<string name="Name">Frame</string>
+						<UDim2 name="Position">
+							<XS>0.74000001</XS>
+							<XO>0</XO>
+							<YS>0.200000003</YS>
+							<YO>0</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>1</XO>
+							<YS>0</YS>
+							<YO>1</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<token name="Style">0</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+					<Item class="TextBox" referent="RBX73">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">6</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">H</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>-90</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Command List</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX74">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">2</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>-30</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Block/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX75">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">6</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>210</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Kick/User:Reason</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX76">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">3</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>30</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Ban/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX77">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">4</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>90</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Nude/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX78">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">5</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>150</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Ghost/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX79">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">7</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>270</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Scream/text</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX80">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">8</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>330</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Respawn/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="TextBox" referent="RBX81">
+						<Properties>
+							<bool name="Active">true</bool>
+							<Color3 name="BackgroundColor3">4294967295</Color3>
+							<float name="BackgroundTransparency">0.5</float>
+							<Color3 name="BorderColor3">4279970357</Color3>
+							<int name="BorderSizePixel">0</int>
+							<bool name="ClearTextOnFocus">true</bool>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">0</token>
+							<token name="FontSize">5</token>
+							<bool name="MultiLine">false</bool>
+							<string name="Name">9</string>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>390</YS>
+								<YO>0</YO>
+							</UDim2>
+							<float name="Rotation">0</float>
+							<UDim2 name="Size">
+								<XS>0</XS>
+								<XO>200</XO>
+								<YS>0</YS>
+								<YO>50</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<string name="Text">Trip/User</string>
+							<Color3 name="TextColor3">4279970357</Color3>
+							<bool name="TextScaled">false</bool>
+							<Color3 name="TextStrokeColor3">4278190080</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
+					<Item class="StringValue" referent="RBX82">
+						<Properties>
+							<string name="Name">Restricted/Hidden CMDs</string>
+							<string name="Value">[ Airstrike/User , Admin/User , Alias/User ]</string>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="StringValue" referent="RBX83">
+				<Properties>
+					<string name="Name">unKick</string>
+					<string name="Value"></string>
+				</Properties>
+			</Item>
+			<Item class="ScreenGui" referent="RBX84">
+				<Properties>
+					<string name="Name">Error</string>
+				</Properties>
+				<Item class="TextBox" referent="RBX85">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Color3 name="BackgroundColor3">4294967295</Color3>
+						<float name="BackgroundTransparency">0.5</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClearTextOnFocus">true</bool>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">3</token>
+						<token name="FontSize">5</token>
+						<bool name="MultiLine">false</bool>
+						<string name="Name">T</string>
+						<UDim2 name="Position">
+							<XS>0.900000513</XS>
+							<XO>-100</XO>
+							<YS>0.850000024</YS>
+							<YO>-25</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>200</XO>
+							<YS>0</YS>
+							<YO>50</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<string name="Text">YuguScript:      An Error Occured!</string>
+						<Color3 name="TextColor3">4278190080</Color3>
+						<bool name="TextScaled">false</bool>
+						<Color3 name="TextStrokeColor3">4278190080</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<bool name="TextWrapped">true</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
+				<Item class="TextBox" referent="RBX86">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Color3 name="BackgroundColor3">4294967295</Color3>
+						<float name="BackgroundTransparency">1</float>
+						<Color3 name="BorderColor3">4279970357</Color3>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClearTextOnFocus">true</bool>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">3</token>
+						<token name="FontSize">5</token>
+						<bool name="MultiLine">false</bool>
+						<string name="Name">o</string>
+						<UDim2 name="Position">
+							<XS>0.900000513</XS>
+							<XO>-100</XO>
+							<YS>0.850000024</YS>
+							<YO>-25</YO>
+						</UDim2>
+						<float name="Rotation">0</float>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>200</XO>
+							<YS>0</YS>
+							<YO>50</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<string name="Text">YuguScript:                                                </string>
+						<Color3 name="TextColor3">4294901764</Color3>
+						<bool name="TextScaled">false</bool>
+						<Color3 name="TextStrokeColor3">4278190080</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<bool name="TextWrapped">true</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="BoolValue" referent="RBX87">
+			<Properties>
+				<string name="Name">BadWord</string>
+				<bool name="Value">false</bool>
+			</Properties>
+			<Item class="StringValue" referent="RBX88">
+				<Properties>
+					<string name="Name">Sender</string>
+					<string name="Value">~</string>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="BoolValue" referent="RBX89">
+			<Properties>
+				<string name="Name">PostInfo</string>
+				<bool name="Value">false</bool>
+			</Properties>
+			<Item class="StringValue" referent="RBX90">
+				<Properties>
+					<string name="Name">Info</string>
+					<string name="Value">--Null</string>
+				</Properties>
+			</Item>
+		</Item>
+	</Item>
+</roblox>
